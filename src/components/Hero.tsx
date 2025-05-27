@@ -32,13 +32,13 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
         >
-          <h1 className="text-2xl sm:text-5xl font-bold text-white leading-snug sm:leading-tight mb-4 sm:mb-5">
+          <h1 className="text-3xl sm:text-5xl font-bold text-white leading-snug sm:leading-tight mb-4 sm:mb-5">
             Tienes un buen restaurante
             <br />
             <span className="text-[#D96C4B]">Pero no un buen negocio</span>
           </h1>
 
-          <p className="text-sm sm:text-lg text-gray-300 mb-6 sm:mb-8 max-w-xs sm:max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-300 mb-6 sm:mb-8 max-w-xs sm:max-w-2xl mx-auto">
             Transforma tu pasión culinaria en un negocio rentable con nuestro método probado.
           </p>
 
@@ -46,7 +46,7 @@ const Hero = () => {
             <Button 
               asChild
               variant="outline"
-              className="border-white text-white bg-white/5 hover:bg-white/60 px-5 py-3 text-xs sm:text-base"
+              className="border-black text-white bg-white/15 hover:bg-orange-200/50 px-5 py-3 text-xs sm:text-base"
             >
               <Link to="/metodo">Empieza a ganar dinero de verdad con tu restaurante</Link>
             </Button>

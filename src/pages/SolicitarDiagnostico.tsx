@@ -44,7 +44,7 @@ const SolicitarDiagnostico = () => {
 
   return (
     <Layout>
-      <section className="relative py-40 px-4 bg-gradient-to-b from-[#0F0F0F] via-orange-950/40 to-white overflow-hidden">
+      <section className="relative pt-40 py-28 px-4 bg-gradient-to-b from-[#0F0F0F] via-orange-950/40 to-white overflow-hidden">
         {/* Elementos decorativos */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
           <div className="absolute top-1/4 left-10 w-32 h-32 rounded-full bg-[#D96C4B]/10 blur-3xl"></div>
@@ -65,7 +65,7 @@ const SolicitarDiagnostico = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#D96C4B] to-orange-500 dark:from-[#D96C4B] dark:to-orange-400">
               Optimiza tu restaurante hoy
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-200 dark:text-gray-300 max-w-3xl mx-auto">
               Completa este formulario y recibe un análisis personalizado de tu negocio
             </p>
           </motion.div>
@@ -73,98 +73,98 @@ const SolicitarDiagnostico = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Formulario */}
             <motion.div
-  initial={{ opacity: 0, x: -50 }}
-  animate={inView ? { opacity: 1, x: 0 } : {}}
-  transition={{ duration: 0.6, delay: 0.2 }}
->
-  <Card className="p-8 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-2xl">
-    <h2 className="text-3xl font-bold text-orange-600 drop-shadow-md mb-6 text-center">
-      Solicitar Diagnóstico Gratuito
-    </h2>
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid md:grid-cols-2 gap-6">
-        <div>
-          <Label htmlFor="nombre" className="text-gray-700 dark:text-gray-300">Nombre *</Label>
-          <Input 
-            id="nombre"
-            value={formData.nombre}
-            onChange={(e) => setFormData({...formData, nombre: e.target.value})}
-            required
-            className="mt-2 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:border-[#D96C4B]/50 focus:border-[#D96C4B] focus:ring-[#D96C4B]/20 transition-all"
-          />
-        </div>
-        <div>
-          <Label htmlFor="restaurante" className="text-gray-700 dark:text-gray-300">Restaurante *</Label>
-          <Input 
-            id="restaurante"
-            value={formData.restaurante}
-            onChange={(e) => setFormData({...formData, restaurante: e.target.value})}
-            required
-            className="mt-2 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:border-[#D96C4B]/50 focus:border-[#D96C4B] focus:ring-[#D96C4B]/20 transition-all"
-          />
-        </div>
-      </div>
-      <div className="grid md:grid-cols-2 gap-6">
-        <div>
-          <Label htmlFor="email" className="text-gray-700 dark:text-gray-300">Email *</Label>
-          <Input 
-            id="email"
-            type="email"
-            value={formData.email}
-            onChange={(e) => setFormData({...formData, email: e.target.value})}
-            required
-            className="mt-2 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:border-[#D96C4B]/50 focus:border-[#D96C4B] focus:ring-[#D96C4B]/20 transition-all"
-          />
-        </div>
-        <div>
-          <Label htmlFor="telefono" className="text-gray-700 dark:text-gray-300">Teléfono *</Label>
-          <Input 
-            id="telefono"
-            value={formData.telefono}
-            onChange={(e) => setFormData({...formData, telefono: e.target.value})}
-            required
-            className="mt-2 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:border-[#D96C4B]/50 focus:border-[#D96C4B] focus:ring-[#D96C4B]/20 transition-all"
-          />
-        </div>
-      </div>
-      <div>
-        <Label htmlFor="ciudad" className="text-gray-700 dark:text-gray-300">Ciudad</Label>
-        <Input 
-          id="ciudad"
-          value={formData.ciudad}
-          onChange={(e) => setFormData({...formData, ciudad: e.target.value})}
-          className="mt-2 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:border-[#D96C4B]/50 focus:border-[#D96C4B] focus:ring-[#D96C4B]/20 transition-all"
-        />
-      </div>
-      <div>
-        <Label htmlFor="mejorar" className="text-gray-700 dark:text-gray-300">¿Qué te gustaría mejorar?</Label>
-        <Textarea 
-          id="mejorar"
-          value={formData.mejorar}
-          onChange={(e) => setFormData({...formData, mejorar: e.target.value})}
-          className="mt-2 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:border-[#D96C4B]/50 focus:border-[#D96C4B] focus:ring-[#D96C4B]/20 transition-all min-h-[120px]"
-          placeholder="Ej: Reducir costos, mejorar procesos, aumentar ventas..."
-        />
-      </div>
-      <p className="text-sm text-gray-500 dark:text-gray-400">
-        Al enviar aceptas que contactemos contigo. Respetamos tu privacidad.
-      </p>
-      <motion.div
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
-      >
-        <Button 
-          type="submit"
-          size="lg" 
-          className="w-full bg-gradient-to-r from-[#D96C4B] to-orange-600 hover:from-[#D96C4B]/90 hover:to-orange-600/90 text-white text-lg py-6 shadow-lg hover:shadow-xl transition-all"
-        >
-          Enviar
-          <ArrowRight className="ml-2 h-5 w-5" />
-        </Button>
-      </motion.div>
-    </form>
-  </Card>
-</motion.div>
+              initial={{ opacity: 0, x: -50 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <Card className="p-8 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-2xl">
+                <h2 className="text-3xl font-bold text-orange-600 drop-shadow-md py-2 mb-6 text-center">
+                  Solicitar Diagnóstico Gratuito
+                </h2>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <Label htmlFor="nombre" className="text-gray-700 dark:text-gray-300">Nombre *</Label>
+                      <Input 
+                        id="nombre"
+                        value={formData.nombre}
+                        onChange={(e) => setFormData({...formData, nombre: e.target.value})}
+                        required
+                        className="mt-2 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:border-[#D96C4B]/50 focus:border-[#D96C4B] focus:ring-[#D96C4B]/20 transition-all"
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="restaurante" className="text-gray-700 dark:text-gray-300">Restaurante *</Label>
+                      <Input 
+                        id="restaurante"
+                        value={formData.restaurante}
+                        onChange={(e) => setFormData({...formData, restaurante: e.target.value})}
+                        required
+                        className="mt-2 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:border-[#D96C4B]/50 focus:border-[#D96C4B] focus:ring-[#D96C4B]/20 transition-all"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <Label htmlFor="email" className="text-gray-700 dark:text-gray-300">Email *</Label>
+                      <Input 
+                        id="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                        required
+                        className="mt-2 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:border-[#D96C4B]/50 focus:border-[#D96C4B] focus:ring-[#D96C4B]/20 transition-all"
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="telefono" className="text-gray-700 dark:text-gray-300">Teléfono *</Label>
+                      <Input 
+                        id="telefono"
+                        value={formData.telefono}
+                        onChange={(e) => setFormData({...formData, telefono: e.target.value})}
+                        required
+                        className="mt-2 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:border-[#D96C4B]/50 focus:border-[#D96C4B] focus:ring-[#D96C4B]/20 transition-all"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <Label htmlFor="ciudad" className="text-gray-700 dark:text-gray-300">Ciudad</Label>
+                    <Input 
+                      id="ciudad"
+                      value={formData.ciudad}
+                      onChange={(e) => setFormData({...formData, ciudad: e.target.value})}
+                      className="mt-2 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:border-[#D96C4B]/50 focus:border-[#D96C4B] focus:ring-[#D96C4B]/20 transition-all"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="mejorar" className="text-gray-700 dark:text-gray-300">¿Qué te gustaría mejorar?</Label>
+                    <Textarea 
+                      id="mejorar"
+                      value={formData.mejorar}
+                      onChange={(e) => setFormData({...formData, mejorar: e.target.value})}
+                      className="mt-2 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:border-[#D96C4B]/50 focus:border-[#D96C4B] focus:ring-[#D96C4B]/20 transition-all min-h-[120px]"
+                      placeholder="Ej: Reducir costos, mejorar procesos, aumentar ventas..."
+                    />
+                  </div>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    Al enviar aceptas que contactemos contigo. Respetamos tu privacidad.
+                  </p>
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Button 
+                      type="submit"
+                      size="lg" 
+                      className="w-full bg-gradient-to-r from-[#D96C4B] to-orange-600 hover:from-[#D96C4B]/90 hover:to-orange-600/90 text-white text-lg py-6 shadow-lg hover:shadow-xl transition-all"
+                    >
+                      Enviar
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
+                  </motion.div>
+                </form>
+              </Card>
+            </motion.div>
 
 
             {/* Contenido derecho */}
