@@ -110,7 +110,7 @@ const Modulos = () => {
 
   return (
     <Layout>
-      <section className="py-40 px-4 relative bg-gradient-to-b from-black via-orange-950 to-orange-950/80">
+      <section className="py-40 px-4 relative bg-gradient-to-b from-black via-orange-900 to-black">
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             ref={ref}

@@ -44,13 +44,13 @@ const CtaFinal = () => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#0D0D0D] via-[#1A1A1A] to-[#0D0D0D] py-16 px-6">
       <div className="absolute inset-0 opacity-10">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(60)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute rounded-full bg-[#D96C4B]"
             style={{
-              width: Math.random() * 10 + 2 + 'px',
-              height: Math.random() * 10 + 2 + 'px',
+              width: Math.random() * 20 + 2 + 'px',
+              height: Math.random() * 20 + 2 + 'px',
               left: Math.random() * 100 + '%',
               top: Math.random() * 100 + '%',
             }}

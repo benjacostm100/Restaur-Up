@@ -46,10 +46,11 @@ const Hero = () => {
             <Button 
               asChild
               variant="outline"
-              className="border-black text-white bg-white/15 hover:bg-orange-200/50 px-5 py-3 text-xs sm:text-base"
+              className="border-black text-white bg-white/15 backdrop-blur-md hover:bg-orange-200/50 px-5 py-3 text-xs sm:text-base"
             >
               <Link to="/metodo">Empieza a ganar dinero de verdad con tu restaurante</Link>
             </Button>
+
           </div>
         </motion.div>
 
