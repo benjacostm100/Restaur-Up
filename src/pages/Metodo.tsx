@@ -35,26 +35,14 @@ const AnimatedPhase = ({ fase, title, desc, icon: Icon, index }) => {
 const Metodo = () => {
   // Imágenes de ejemplo (reemplaza con tus propias imágenes)
  // Imágenes de ejemplo de Unsplash
-const phaseImages = [
-  "https://images.unsplash.com/photo-1541542684-407bcb0e3f2c", // Análisis restaurante
-  "https://images.unsplash.com/photo-1560185127-6ea0b6f04370", // Plan de acción
-  "https://images.unsplash.com/photo-1525351484163-7529414344d8", // Implementación
-  "https://images.unsplash.com/photo-1577985041794-4a5f5a0bfe77", // Resultados
-];
+
 
   return (
     <Layout>
       {/* Hero: El Método con imagen de fondo */}
-      <section className="relative py-32 px-4 text-white text-center overflow-hidden">
-        <div className="absolute inset-0 bg-[#1A1A1A]/90 z-0"></div>
-        <div className="absolute inset-0 z-0">
-          <img 
-  src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" 
-  alt="Restaurante profesional" 
-  className="w-full h-full object-cover object-center"
-  loading="lazy"
-/>
-
+      <section className="relative pb-28 pt-40 px-4 text-white text-center overflow-hidden">
+        <div className="absolute inset-0 bg-black z-0"></div>
+        <div className="absolute bg-gradient-to-r from-[#D96C4B]/20 to-transparent inset-0 z-0">
         </div>
         
         <motion.div 
@@ -133,26 +121,6 @@ const phaseImages = [
             ))}
           </div>
 
-          {/* Galería de imágenes para cada fase */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
-            {phaseImages.map((img, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.03 }}
-                className="overflow-hidden rounded-lg shadow-lg"
-              >
-                <img 
-                  src={img} 
-                  alt={`Fase ${index + 1}`} 
-                  className="w-full h-48 md:h-64 object-cover hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
-                <div className="bg-white p-4 text-center">
-                  <span className="text-sm font-semibold text-[#D96C4B]">FASE 0{index + 1}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
 
           <div className="text-center mt-16">
             <motion.div
@@ -203,12 +171,12 @@ const phaseImages = [
             
             <div className="relative h-80 bg-gray-200 rounded-xl overflow-hidden shadow-xl">
               <img 
-                src="/images/antes-despues.jpg" 
+                src="https://images.unsplash.com/photo-1599054228863-88e0b902a32f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                 alt="Antes y después" 
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent"></div>
               <div className="relative z-10 p-6 text-white h-full flex flex-col justify-center">
                 <h4 className="text-xl font-bold mb-2">Transformación real</h4>
                 <p className="text-gray-200">De la desorganización a la excelencia operativa</p>
@@ -271,7 +239,7 @@ const phaseImages = [
               asChild
               size="lg"
               variant="outline"
-              className="text-white hover:bg-white/10 text-lg px-8"
+              className="text-white bg-white/10 text-lg px-8"
             >
               <Link to="/casos-de-exito">Ver más casos de éxito</Link>
             </Button>

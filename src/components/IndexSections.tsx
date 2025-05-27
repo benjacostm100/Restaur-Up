@@ -1,120 +1,225 @@
 import { Search, Map, Wrench, BarChart, UserCheck, Utensils, Receipt, TrendingUp, Settings } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const IndexSections = () => {
   const fases = [
-    { icon: Search, text: "Análisis: evaluamos tu situación y objetivos reales" },
-    { icon: Map, text: "Plan de acción: trazamos una estrategia operativa" },
-    { icon: Wrench, text: "Implementación y ajustes: aplicamos en cocina, sala y gestión" },
-    { icon: BarChart, text: "Resultados: medimos, comparamos y mejoramos" },
+    { icon: Search, text: "Diagnóstico inicial" },
+    { icon: Map, text: "Plan estratégico" },
+    { icon: Wrench, text: "Implementación" },
+    { icon: BarChart, text: "Optimización" },
   ];
 
   const modulos = [
-    { icon: Utensils, text: "Food Cost: control de escandallos, mermas y precios" },
-    { icon: Receipt, text: "Otros Costes: optimización de plantilla, energía y consumibles" },
-    { icon: TrendingUp, text: "Revenue Management: estrategia de precios y mix de venta" },
-    { icon: Settings, text: "Optimización de Procesos: sistemas de control y estandarización" },
+    { icon: Utensils, text: "Control de costos" },
+    { icon: Receipt, text: "Gestión operativa" },
+    { icon: TrendingUp, text: "Revenue Management" },
+    { icon: Settings, text: "Procesos Estandarizados" },
   ];
 
   const programas = [
     {
       icon: Wrench,
-      title: "Programa DIY",
-      desc: "Guías y herramientas para implementar mejoras de forma autónoma.",
-      extra: "Resultados desde la semana 3",
+      title: "Autogestión",
+      desc: "Herramientas para implementar mejoras por tu cuenta",
     },
     {
       icon: UserCheck,
-      title: "Programa Full Service",
-      desc: "Nosotros ejecutamos, tú supervisas. Perfecto para quienes no tienen tiempo.",
-      extra: "Seguimiento 1:1 y soporte directo",
+      title: "Asesoría Completa",
+      desc: "Nuestro equipo ejecuta las mejoras por ti",
     },
   ];
 
-  return (
-    <main className="bg-gradient-to-br from-[#FFE9D6] to-[#FFFAF4] py-16 px-4">
-      <div className="max-w-6xl mx-auto space-y-14">
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3
+      }
+    }
+  };
 
-        {/* Método + Módulos */}
-        <section className="text-center space-y-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#D96C4B]">¿Cómo aplicamos RestaurUP en tu restaurante?</h2>
-            <p className="text-gray-700 max-w-xl mx-auto mt-3 text-sm">
-              Nuestro método combina 4 fases clave y módulos operativos para resultados sostenibles.
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  return (
+    <section className="bg-gradient-to-br from-[#FFF9F5] to-[#FFEFE5] py-20 px-4">
+      <div className="max-w-6xl mx-auto space-y-20">
+
+        {/* Sección Método */}
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={container}
+          className="text-center space-y-12"
+        >
+          <motion.div variants={item}>
+            <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#D96C4B] to-[#E2845A]">
+              Transformación en 4 pasos
+            </h2>
+            <p className="text-[#5A1A0E]/80 mt-4 max-w-xl mx-auto">
+              Un método probado para restaurantes que buscan resultados reales
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-4 gap-4">
-            {fases.map((item, index) => (
+          <motion.div 
+            className="grid md:grid-cols-4 gap-4"
+            variants={container}
+          >
+            {fases.map((phase, index) => (
               <motion.div
                 key={index}
-                whileHover={{ scale: 1.05 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                initial={{ opacity: 0, y: 10 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="flex flex-col items-center bg-white p-3 rounded-lg shadow-sm border border-[#f2d6c7] text-center"
+                variants={item}
+                whileHover={{ y: -5 }}
+                className="bg-white/90 p-5 rounded-xl shadow-sm border border-white hover:border-[#D96C4B]/30 transition-all"
               >
-                <item.icon className="text-[#D96C4B]" size={24} />
-                <p className="text-xs mt-2 text-gray-800">{item.text}</p>
+                <div className="p-3 bg-[#D96C4B]/10 rounded-full w-fit mx-auto">
+                  <phase.icon className="text-[#D96C4B]" size={24} />
+                </div>
+                <h3 className="mt-4 font-medium text-[#5A1A0E]">{phase.text}</h3>
               </motion.div>
             ))}
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-4 mt-6">
-            {modulos.map((item, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.05 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                initial={{ opacity: 0, y: 10 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="flex flex-col items-center bg-white p-3 rounded-lg shadow-sm border border-[#f2d6c7] text-center"
-              >
-                <item.icon className="text-[#D96C4B]" size={24} />
-                <p className="text-xs mt-2 text-gray-800">{item.text}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <Button variant="outline" size="sm" className="mt-6 text-[#D96C4B] border-[#D96C4B] hover:bg-[#D96C4B] hover:text-white transition-all">
-            Explora más detalles
-          </Button>
-        </section>
-
-        {/* Programas */}
-        <section className="text-center space-y-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#D96C4B]">Programas diseñados para tu restaurante</h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {programas.map((item, index) => (
+          <motion.div variants={item}>
+            <Button 
+              asChild
+              variant="link"
+              className="text-[#D96C4B] hover:text-[#7A2C1E] group"
+            >
+              <Link to="/metodo">
+                Conoce nuestro método completo
+                <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+              </Link>
+            </Button>
+          </motion.div>
+        </motion.div>
+
+        {/* Sección Módulos */}
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={container}
+          className="text-center space-y-12"
+        >
+          <motion.div variants={item}>
+            <h2 className="text-4xl font-bold text-[#5A1A0E]">
+              Áreas de <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#D96C4B] to-[#E2845A]">impacto</span>
+            </h2>
+            <p className="text-[#5A1A0E]/80 mt-4 max-w-xl mx-auto">
+              Soluciones específicas para cada aspecto de tu restaurante
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="grid md:grid-cols-4 gap-4"
+            variants={container}
+          >
+            {modulos.map((module, index) => (
               <motion.div
                 key={index}
+                variants={item}
                 whileHover={{ scale: 1.03 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                initial={{ opacity: 0, y: 10 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white p-4 rounded-lg shadow-sm border border-[#f2d6c7] text-left space-y-2"
+                className="bg-white/90 p-5 rounded-xl shadow-sm border border-white hover:shadow-md transition-all"
               >
-                <div className="flex items-center gap-2">
-                  <item.icon className="text-[#D96C4B]" size={24} />
-                  <h3 className="text-lg font-semibold">{item.title}</h3>
+                <div className="p-3 bg-[#D96C4B]/10 rounded-full w-fit mx-auto">
+                  <module.icon className="text-[#D96C4B]" size={24} />
                 </div>
-                <p className="text-sm text-gray-700">{item.desc}</p>
-                <p className="text-sm text-[#D96C4B] font-semibold">{item.extra}</p>
+                <h3 className="mt-4 font-medium text-[#5A1A0E]">{module.text}</h3>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
 
-          <Button variant="default" size="sm" className="bg-[#D96C4B] text-white hover:bg-[#b85738] transition-all mt-4">
-            Solicita tu diagnóstico gratuito
-          </Button>
-        </section>
+          <motion.div variants={item}>
+            <Button 
+              asChild
+              variant="link"
+              className="text-[#D96C4B] hover:text-[#7A2C1E] group"
+            >
+              <Link to="/modulos">
+                Explora todos los módulos
+                <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+              </Link>
+            </Button>
+          </motion.div>
+        </motion.div>
+
+        {/* Sección Programas */}
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={container}
+          className="text-center space-y-12"
+        >
+          <motion.div variants={item}>
+            <h2 className="text-4xl font-bold text-[#5A1A0E]">
+              Nuestros <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#D96C4B] to-[#E2845A]">programas</span>
+            </h2>
+            <p className="text-[#5A1A0E]/80 mt-4 max-w-xl mx-auto">
+              Elige el formato que mejor se adapte a tus necesidades
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"
+            variants={container}
+          >
+            {programas.map((program, index) => (
+              <motion.div
+                key={index}
+                variants={item}
+                whileHover={{ y: -5 }}
+                className="bg-white/90 p-8 rounded-xl shadow-sm border border-white hover:border-[#D96C4B]/30 transition-all text-left"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="p-3 bg-[#D96C4B]/10 rounded-full">
+                    <program.icon className="text-[#D96C4B]" size={28} />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#5A1A0E]">{program.title}</h3>
+                </div>
+                <p className="mt-4 text-[#5A1A0E]/90">{program.desc}</p>
+                <Button 
+                  asChild
+                  size="sm"
+                  className="mt-6 bg-[#D96C4B] hover:bg-[#7A2C1E] text-white"
+                >
+                  <Link to={`/programa-${program.title.toLowerCase()}`}>
+                    Saber más
+                  </Link>
+                </Button>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div variants={item}>
+            <Button 
+              asChild
+              className="bg-gradient-to-r from-[#D96C4B] to-[#E2845A] text-white px-8 py-6 text-lg shadow-lg hover:shadow-[#D96C4B]/40"
+            >
+              <Link to="/contacto">
+                Solicita tu diagnóstico gratuito
+              </Link>
+            </Button>
+          </motion.div>
+        </motion.div>
 
       </div>
-    </main>
+    </section>
   );
 };
 

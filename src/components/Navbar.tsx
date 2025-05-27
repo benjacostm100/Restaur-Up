@@ -35,7 +35,7 @@ const Navbar = () => {
           ? 'bg-black/80 backdrop-blur-md shadow-lg py-1' 
           : 'bg-transparent backdrop-blur-5 '
       }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl px-4">
           <div className="flex justify-between items-center h-24">
            <motion.div
             whileHover={{ scale: 1.05 }}
@@ -46,9 +46,9 @@ const Navbar = () => {
               onClick={() => window.scrollTo(0, 0)}
             >
               <img 
-                src="/logo3.png" 
+                src="/logo5.png" 
                 alt="RestaurUP Logo" 
-                className="h-64 w-auto" 
+                className="h-40 w-auto" 
               />
             </Link>
           </motion.div>
@@ -107,9 +107,9 @@ const Navbar = () => {
               whileTap={{ scale: 0.9 }}
             >
               {mobileMenuOpen ? (
-                <X size={32} className="text-[#D96C4B]" />
+                <X size={40} className="text-[#D96C4B]" />
               ) : (
-                <Menu size={32} />
+                <Menu size={40} />
               )}
             </motion.button>
           </div>

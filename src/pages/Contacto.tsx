@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -32,42 +31,42 @@ const Contacto = () => {
 
   return (
     <Layout>
-      <section className="py-20 px-4">
+      <section className="py-48 px-4 bg-[#121212]">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-center mb-16 text-[#333333]">Contacto</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-center mb-16 text-white">Contacto</h1>
           
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Información de contacto */}
             <div className="space-y-8">
-              <Card className="p-8 bg-white border-gray-200 shadow-lg">
+              <Card className="p-8 bg-[#1E1E1E] border-[#333] shadow-md">
                 <h3 className="text-2xl font-bold mb-6 text-[#D96C4B]">Información de Contacto</h3>
-                <div className="space-y-6">
+                <div className="space-y-6 text-white">
                   <div className="flex items-center">
                     <Mail className="mr-4 text-[#D96C4B]" size={24} />
                     <div>
-                      <p className="font-semibold text-[#333333]">Email</p>
-                      <p className="text-gray-600">info@restaurup.com</p>
+                      <p className="font-semibold">Email</p>
+                      <p className="text-gray-400">info@restaurup.com</p>
                     </div>
                   </div>
                   <div className="flex items-center">
                     <Phone className="mr-4 text-[#D96C4B]" size={24} />
                     <div>
-                      <p className="font-semibold text-[#333333]">Teléfono</p>
-                      <p className="text-gray-600">+34 900 123 456</p>
+                      <p className="font-semibold">Teléfono</p>
+                      <p className="text-gray-400">+34 900 123 456</p>
                     </div>
                   </div>
                   <div className="flex items-center">
                     <MessageCircle className="mr-4 text-[#D96C4B]" size={24} />
                     <div>
-                      <p className="font-semibold text-[#333333]">WhatsApp</p>
-                      <p className="text-gray-600">+34 900 123 456</p>
+                      <p className="font-semibold">WhatsApp</p>
+                      <p className="text-gray-400">+34 900 123 456</p>
                     </div>
                   </div>
                   <div className="flex items-center">
                     <MapPin className="mr-4 text-[#D96C4B]" size={24} />
                     <div>
-                      <p className="font-semibold text-[#333333]">Dirección</p>
-                      <p className="text-gray-600">Calle Restauración, 123<br />28001 Madrid, España</p>
+                      <p className="font-semibold">Dirección</p>
+                      <p className="text-gray-400">Calle Restauración, 123<br />28001 Madrid, España</p>
                     </div>
                   </div>
                 </div>
@@ -82,38 +81,38 @@ const Contacto = () => {
             </div>
 
             {/* Formulario de consultas generales */}
-            <Card className="p-8 bg-white border-gray-200 shadow-lg">
+            <Card className="p-8 bg-[#1E1E1E] border-[#333] shadow-md">
               <h3 className="text-2xl font-bold mb-6 text-[#D96C4B]">Consultas Generales</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <Label htmlFor="nombre" className="text-[#333333]">Nombre *</Label>
+                  <Label htmlFor="nombre" className="text-white">Nombre *</Label>
                   <Input 
                     id="nombre"
                     value={formData.nombre}
                     onChange={(e) => setFormData({...formData, nombre: e.target.value})}
                     required
-                    className="mt-2 bg-white border-gray-300 text-[#333333]"
+                    className="mt-2 bg-[#2C2C2C] border-[#444] text-white placeholder:text-gray-400"
                   />
                 </div>
                 <div>
-                  <Label htmlFor="email" className="text-[#333333]">Email *</Label>
+                  <Label htmlFor="email" className="text-white">Email *</Label>
                   <Input 
                     id="email"
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                     required
-                    className="mt-2 bg-white border-gray-300 text-[#333333]"
+                    className="mt-2 bg-[#2C2C2C] border-[#444] text-white placeholder:text-gray-400"
                   />
                 </div>
                 <div>
-                  <Label htmlFor="mensaje" className="text-[#333333]">Mensaje *</Label>
+                  <Label htmlFor="mensaje" className="text-white">Mensaje *</Label>
                   <Textarea 
                     id="mensaje"
                     value={formData.mensaje}
                     onChange={(e) => setFormData({...formData, mensaje: e.target.value})}
                     required
-                    className="mt-2 bg-white border-gray-300 text-[#333333]"
+                    className="mt-2 bg-[#2C2C2C] border-[#444] text-white placeholder:text-gray-400"
                     rows={6}
                     placeholder="Escribe tu consulta aquí..."
                   />
