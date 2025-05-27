@@ -206,16 +206,6 @@ const IndexSections = () => {
             ))}
           </motion.div>
 
-          <motion.div variants={item}>
-            <Button 
-              asChild
-              className="bg-gradient-to-r from-[#D96C4B] to-[#E2845A] text-white px-8 py-6 text-lg shadow-lg hover:shadow-[#D96C4B]/40"
-            >
-              <Link to="/contacto">
-                Solicita tu diagnóstico gratuito
-              </Link>
-            </Button>
-          </motion.div>
         </motion.div>
 
       </div>

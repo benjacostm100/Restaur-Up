@@ -62,13 +62,6 @@ const Metodo = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Button
-              asChild
-              size="lg"
-              className="bg-[#D96C4B] hover:bg-[#D96C4B]/90 text-white text-lg"
-            >
-              <Link to="/programa">Descubre cómo lo hacemos</Link>
-            </Button>
           </motion.div>
         </motion.div>
       </section>
@@ -187,16 +180,8 @@ const Metodo = () => {
       </section>
 
       {/* Cierre Inspirador con video */}
-      <section className="relative py-32 px-4 text-white text-center overflow-hidden bg-[#1A1A1A]">
+      <section className="relative py-32 px-4 text-white text-center overflow-hidden bg-black">
         <div className="absolute inset-0 z-0 opacity-30">
-          <video 
-            autoPlay 
-            muted 
-            loop 
-            className="w-full h-full object-cover"
-          >
-            <source src="/videos/restaurante-background.mp4" type="video/mp4" />
-          </video>
         </div>
         
         <div className="relative z-10 max-w-4xl mx-auto">
