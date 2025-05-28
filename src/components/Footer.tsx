@@ -18,7 +18,7 @@ const FooterLink = ({ href, children, index }) => {
     >
       <a
   href={href}
-  className="text-gray-400 hover:text-[#D96C4B] transition-all flex items-center group"
+  className="text-gray-600 hover:text-[#D96C4B] transition-all flex items-center group"
 >
   <span className="flex items-center gap-1">
     {children}
