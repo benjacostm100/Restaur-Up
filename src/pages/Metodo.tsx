@@ -41,9 +41,9 @@ const Metodo = () => {
   return (
     <Layout>
       {/* Hero: El Método con fondo oscuro */}
-      <section className="relative py-32 px-4 text-center overflow-hidden bg-gradient-to-b from-black/95 to-black">
-        <div className="absolute inset-0 z-0 opacity-30">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551529834-525807d6b4f3?q=80&w=2031&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center opacity-50"></div>
+      <section className="relative pt-40 pb-32 px-4 text-center overflow-hidden bg-gradient-to-b from-black/95 to-black">
+        <div className="absolute inset-0 z-0 opacity-40">
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551529834-525807d6b4f3?q=80&w=2031&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center opacity-60"></div>
         </div>
         
         <motion.div 
@@ -81,7 +81,7 @@ const Metodo = () => {
       </section>
 
       {/* Fases del Método */}
-      <section className="py-20 px-4 bg-black/90 text-white">
+      <section className="py-20 px-4 bg-gray-950 text-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -148,7 +148,7 @@ const Metodo = () => {
       </section>
 
       {/* Caso de éxito con before/after */}
-      <section className="py-20 px-4 bg-gradient-to-r from-black/95 via-orange-950 to-black/95">
+      <section className="py-20 px-4 bg-gradient-to-r from-gray-950/90 via-gray-950 to-orange-950">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-[#D96C4B] font-semibold tracking-wider">RESULTADOS MEDIBLES</span>

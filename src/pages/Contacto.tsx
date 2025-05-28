@@ -86,7 +86,7 @@ const Contacto = () => {
 
   return (
     <Layout>
-      <section className="relative py-40 px-4 bg-gradient-to-b from-[#0F0F0F] to-[#1A1A1A] overflow-hidden">
+      <section className="relative py-40 px-4 bg-gradient-to-b from-gray-950 to-[#1A1A1A] overflow-hidden">
         {/* Elementos decorativos */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
           <div className="absolute top-1/4 left-10 w-32 h-32 rounded-full bg-[#D96C4B]/10 blur-3xl"></div>

@@ -44,7 +44,7 @@ const ProblemSolution = () => {
   };
 
   return (
-    <section className="bg-black text-white py-20 px-6">
+    <section className="bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white py-20 px-6">
       <div className="max-w-6xl mx-auto space-y-20">
         {/* El Problema */}
         <motion.div 

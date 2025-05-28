@@ -44,7 +44,7 @@ const SolicitarDiagnostico = () => {
 
   return (
     <Layout>
-      <section className="relative pt-40 py-28 px-4 bg-gradient-to-b from-[#0F0F0F] via-orange-950/40 to-white overflow-hidden">
+      <section className="relative pt-40 pb-36 px-4 bg-gradient-to-b from-[#0F0F0F] via-black/80 to-white overflow-hidden">
         {/* Elementos decorativos */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
           <div className="absolute top-1/4 left-10 w-32 h-32 rounded-full bg-[#D96C4B]/10 blur-3xl"></div>

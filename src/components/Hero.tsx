@@ -22,7 +22,7 @@ const Hero = () => {
         }}
       >
         {/* Overlay degradado */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/75 to-black/20"></div>
       </motion.div>
 
       {/* Contenido */}

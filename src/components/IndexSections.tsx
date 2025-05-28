@@ -1,4 +1,4 @@
-import { Search, Map, Wrench, BarChart, UserCheck, Utensils, Receipt, TrendingUp, Settings } from "lucide-react";
+import { Search, Map, Wrench, BarChart, UserCheck, Utensils, Receipt, TrendingUp, Settings, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -55,168 +55,250 @@ const IndexSections = () => {
   };
 
   return (
-    <section className="relative bg-gradient-to-b from-orange-200 to-orange-100 overflow-hidden py-20 px-4">
-    
-  {/* 🎨 Ondas suaves */}
-  <svg className="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 320">
-    <path fill="#fef3c7" fillOpacity="1" d="M0,224L60,208C120,192,240,160,360,149.3C480,139,600,149,720,149.3C840,149,960,139,1080,144C1200,149,1320,171,1380,181.3L1440,192V320H1380C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320H0Z"></path>
-  </svg>
+    <section className="relative bg-gradient-to-b from-gray-950/80 via-gray-950 to-orange-200 overflow-hidden py-24 px-4">
 
-  {/* Contenido principal */}
-  <div className="relative z-10 max-w-6xl mx-auto space-y-20">
+      {/* 🌌 Efectos de fondo modernos */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Partículas animadas */}
+        <div className="absolute inset-0 opacity-10">
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute bg-[#D96C4B] rounded-full"
+              style={{
+                width: Math.random() * 6 + 2 + 'px',
+                height: Math.random() * 6 + 2 + 'px',
+                left: Math.random() * 100 + '%',
+                top: Math.random() * 100 + '%',
+              }}
+              animate={{
+                y: [0, (Math.random() - 0.5) * 40],
+                x: [0, (Math.random() - 0.5) * 40],
+                opacity: [0.3, 0.8, 0.3],
+              }}
+              transition={{
+                duration: Math.random() * 10 + 10,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut"
+              }}
+            />
+          ))}
+        </div>
 
-    {/* Sección Método */}
-    <motion.div 
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-      variants={container}
-      className="text-center space-y-12"
-    >
-      <motion.div variants={item}>
-        <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#D96C4B] to-[#E2845A]">
-          Transformación en 4 pasos
-        </h2>
-        <p className="text-[#5A1A0E]/80 mt-4 max-w-xl mx-auto">
-          Un método probado para restaurantes que buscan resultados reales
-        </p>
-      </motion.div>
-
-      <motion.div 
-        className="grid md:grid-cols-4 gap-4"
-        variants={container}
-      >
-        {fases.map((phase, index) => (
-          <motion.div
-            key={index}
-            variants={item}
-            whileHover={{ y: -5 }}
-            className="bg-white/90 p-5 rounded-xl shadow-sm border border-white hover:border-[#D96C4B]/30 transition-all"
-          >
-            <div className="p-3 bg-[#D96C4B]/10 rounded-full w-fit mx-auto">
-              <phase.icon className="text-[#D96C4B]" size={24} />
-            </div>
-            <h3 className="mt-4 font-medium text-[#5A1A0E]">{phase.text}</h3>
-          </motion.div>
-        ))}
-      </motion.div>
-
-      <motion.div variants={item}>
-        <Button 
-          asChild
-          variant="link"
-          className="text-[#D96C4B] hover:text-[#7A2C1E] group"
+        {/* Ondas fluidas modernas */}
+        <svg
+          className="absolute top-0 left-0 w-full h-40 md:h-60"
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
         >
-          <Link to="/metodo">
-            Conoce nuestro método completo
-            <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
-          </Link>
-        </Button>
-      </motion.div>
-    </motion.div>
+          <path
+            fill="url(#wave-gradient-top)"
+            fillOpacity="0.15"
+            d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+          ></path>
+          <defs>
+            <linearGradient id="wave-gradient-top" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#D96C4B" />
+              <stop offset="100%" stopColor="#E2845A" />
+            </linearGradient>
+          </defs>
+        </svg>
 
-    {/* Sección Módulos */}
-    <motion.div 
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-      variants={container}
-      className="text-center space-y-12"
-    >
-      <motion.div variants={item}>
-        <h2 className="text-4xl font-bold text-[#5A1A0E]">
-          Áreas de <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#D96C4B] to-[#E2845A]">impacto</span>
-        </h2>
-        <p className="text-[#5A1A0E]/80 mt-4 max-w-xl mx-auto">
-          Soluciones específicas para cada aspecto de tu restaurante
-        </p>
-      </motion.div>
-
-      <motion.div 
-        className="grid md:grid-cols-4 gap-4"
-        variants={container}
-      >
-        {modulos.map((module, index) => (
-          <motion.div
-            key={index}
-            variants={item}
-            whileHover={{ scale: 1.03 }}
-            className="bg-white/90 p-5 rounded-xl shadow-sm border border-white hover:shadow-md transition-all"
-          >
-            <div className="p-3 bg-[#D96C4B]/10 rounded-full w-fit mx-auto">
-              <module.icon className="text-[#D96C4B]" size={24} />
-            </div>
-            <h3 className="mt-4 font-medium text-[#5A1A0E]">{module.text}</h3>
-          </motion.div>
-        ))}
-      </motion.div>
-
-      <motion.div variants={item}>
-        <Button 
-          asChild
-          variant="link"
-          className="text-[#D96C4B] hover:text-[#7A2C1E] group"
+        <svg
+          className="absolute bottom-0 left-0 w-full h-40 md:h-60"
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
         >
-          <Link to="/modulos">
-            Explora todos los módulos
-            <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
-          </Link>
-        </Button>
-      </motion.div>
-    </motion.div>
+          <path
+            fill="url(#wave-gradient-bottom)"
+            fillOpacity="0.15"
+            d="M0,128L48,154.7C96,181,192,235,288,234.7C384,235,480,181,576,181.3C672,181,768,235,864,250.7C960,267,1056,245,1152,213.3C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+          <defs>
+            <linearGradient id="wave-gradient-bottom" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#E2845A" />
+              <stop offset="100%" stopColor="#D96C4B" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
 
-    {/* Sección Programas */}
-    <motion.div 
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-      variants={container}
-      className="text-center space-y-12"
-    >
-      <motion.div variants={item}>
-        <h2 className="text-4xl font-bold text-[#5A1A0E]">
-          Nuestros <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#D96C4B] to-[#E2845A]">programas</span>
-        </h2>
-        <p className="text-[#5A1A0E]/80 mt-4 max-w-xl mx-auto">
-          Elige el formato que mejor se adapte a tus necesidades
-        </p>
-      </motion.div>
+      {/* Contenido principal */}
+      <div className="relative z-10 max-w-6xl mx-auto space-y-20">
+        {/* Sección Método */}
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={container}
+          className="text-center space-y-12"
+        >
+          <motion.div variants={item}>
+            <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#D96C4B] to-[#E2845A]">
+              Transformación en 4 pasos
+            </h2>
+            <p className="text-gray-400 mt-4 max-w-xl mx-auto text-lg">
+              Un método probado para restaurantes que buscan resultados reales
+            </p>
+          </motion.div>
 
-      <motion.div 
-        className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"
-        variants={container}
-      >
-        {programas.map((program, index) => (
-          <motion.div
-            key={index}
-            variants={item}
-            whileHover={{ y: -5 }}
-            className="bg-white/90 p-8 rounded-xl shadow-sm border border-white hover:border-[#D96C4B]/30 transition-all text-left"
+          <motion.div 
+            className="grid md:grid-cols-4 gap-6"
+            variants={container}
           >
-            <div className="flex items-center gap-4">
-              <div className="p-3 bg-[#D96C4B]/10 rounded-full">
-                <program.icon className="text-[#D96C4B]" size={28} />
-              </div>
-              <h3 className="text-xl font-bold text-[#5A1A0E]">{program.title}</h3>
-            </div>
-            <p className="mt-4 text-[#5A1A0E]/90">{program.desc}</p>
+            {fases.map((phase, index) => (
+              <motion.div
+                key={index}
+                variants={item}
+                whileHover={{ y: -10 }}
+                className="group relative bg-gray-800/50 p-6 rounded-xl backdrop-blur-sm border border-gray-700 hover:border-[#D96C4B]/50 transition-all overflow-hidden"
+              >
+                {/* Efecto de hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#D96C4B]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <div className="relative z-10">
+                  <div className="p-3 bg-gradient-to-br from-[#D96C4B] to-[#E2845A] rounded-full w-fit mx-auto shadow-lg">
+                    <phase.icon className="text-white" size={24} />
+                  </div>
+                  <h3 className="mt-5 font-semibold text-white">{phase.text}</h3>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div variants={item}>
             <Button 
               asChild
-              size="sm"
-              className="mt-6 bg-[#D96C4B] hover:bg-[#7A2C1E] text-white"
+              variant="link"
+              className="group text-[#D96C4B] hover:text-white"
             >
-              <Link to={`/programa-${program.title.toLowerCase()}`}>
-                Saber más
+              <Link to="/metodo" className="flex items-center">
+                <span className="bg-gradient-to-r from-[#D96C4B] to-[#E2845A] bg-clip-text text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all">
+                  Conoce nuestro método completo
+                </span>
+                <span className="ml-2 group-hover:translate-x-2 transition-transform">
+                  <ArrowRight className="text-[#D96C4B] group-hover:text-white" />
+                </span>
               </Link>
             </Button>
           </motion.div>
-        ))}
-      </motion.div>
-    </motion.div>
+        </motion.div>
 
-  </div>
-</section>
+        {/* Sección Módulos */}
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={container}
+          className="text-center space-y-12"
+        >
+          <motion.div variants={item}>
+            <h2 className="text-4xl md:text-5xl font-bold text-white">
+              Áreas de <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D96C4B] to-[#E2845A]">impacto</span>
+            </h2>
+            <p className="text-gray-400 mt-4 max-w-xl mx-auto text-lg">
+              Soluciones específicas para cada aspecto de tu restaurante
+            </p>
+          </motion.div>
 
+          <motion.div 
+            className="grid md:grid-cols-4 gap-6"
+            variants={container}
+          >
+            {modulos.map((module, index) => (
+              <motion.div
+                key={index}
+                variants={item}
+                whileHover={{ scale: 1.05 }}
+                className="group relative bg-gray-800/50 p-6 rounded-xl backdrop-blur-sm border border-gray-700 hover:shadow-lg hover:shadow-[#D96C4B]/20 transition-all overflow-hidden"
+              >
+                {/* Efecto de brillo al hover */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#D96C4B/10_0%,_transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div className="relative z-10">
+                  <div className="p-3 bg-gradient-to-br from-[#D96C4B] to-[#E2845A] rounded-full w-fit mx-auto shadow-lg">
+                    <module.icon className="text-white" size={24} />
+                  </div>
+                  <h3 className="mt-5 font-semibold text-white">{module.text}</h3>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div variants={item}>
+            <Button 
+              asChild
+              variant="link"
+              className="group text-[#D96C4B] hover:text-white"
+            >
+              <Link to="/modulos" className="flex items-center">
+                <span className="bg-gradient-to-r from-[#D96C4B] to-[#E2845A] bg-clip-text text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all">
+                  Explora todos los módulos
+                </span>
+                <span className="ml-2 group-hover:translate-x-2 transition-transform">
+                  <ArrowRight className="text-[#D96C4B] group-hover:text-white" />
+                </span>
+              </Link>
+            </Button>
+          </motion.div>
+        </motion.div>
+
+        {/* Sección Programas */}
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={container}
+          className="text-center space-y-12"
+        >
+          <motion.div variants={item}>
+            <h2 className="text-4xl md:text-5xl font-bold text-white">
+              Nuestros <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D96C4B] to-[#E2845A]">programas</span>
+            </h2>
+            <p className="text-gray-400 mt-4 max-w-xl mx-auto text-lg">
+              Elige el formato que mejor se adapte a tus necesidades
+            </p>
+          </motion.div>
+
+          <motion.div 
+            className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"
+            variants={container}
+          >
+            {programas.map((program, index) => (
+              <motion.div
+                key={index}
+                variants={item}
+                whileHover={{ y: -5 }}
+                className="group relative bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-xl border border-gray-700 hover:border-[#D96C4B]/50 transition-all overflow-hidden"
+              >
+                {/* Efecto de borde animado */}
+                <div className="absolute inset-0 rounded-xl overflow-hidden">
+                  <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#D96C4B]/30 transition-all duration-500 rounded-xl"></div>
+                </div>
+                
+                <div className="flex items-center gap-5">
+                  <div className="p-4 bg-gradient-to-br from-[#D96C4B] to-[#E2845A] rounded-xl shadow-lg flex-shrink-0">
+                    <program.icon className="text-white" size={28} />
+                  </div>
+                  <h3 className="text-xl font-bold text-white">{program.title}</h3>
+                </div>
+                <p className="mt-4 text-gray-400">{program.desc}</p>
+                <Button 
+                  asChild
+                  size="sm"
+                  className="mt-6 bg-gradient-to-r from-[#D96C4B] to-[#E2845A] hover:from-[#D96C4B]/90 hover:to-[#E2845A]/90 text-white shadow-lg hover:shadow-[#D96C4B]/30"
+                >
+                  <Link to={`/programa-${program.title.toLowerCase()}`}>
+                    Saber más
+                  </Link>
+                </Button>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 
