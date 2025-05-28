@@ -212,7 +212,7 @@ const Programa = () => {
                 variant="outline"
                 className="w-full border-[#D96C4B] text-[#D96C4B] hover:bg-[#D96C4B]/10"
               >
-                <Link to="/programa-diy" className="flex items-center justify-center">
+                <Link to="/solicitar-diagnostico" className="flex items-center justify-center">
                   Más detalles <ChevronRight className="ml-2" size={18} />
                 </Link>
               </Button>

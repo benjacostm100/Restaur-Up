@@ -2,6 +2,7 @@ import { Search, Map, Wrench, BarChart, UserCheck, Utensils, Receipt, TrendingUp
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import Contacto from './../pages/Contacto';
 
 const IndexSections = () => {
   const fases = [
@@ -287,9 +288,9 @@ const IndexSections = () => {
                 <Button 
                   asChild
                   size="sm"
-                  className="mt-6 bg-gradient-to-r from-[#D96C4B] to-[#E2845A] hover:from-[#D96C4B]/90 hover:to-[#E2845A]/90 text-white shadow-lg hover:shadow-[#D96C4B]/30"
+                  className="mt-6 bg-gradient-to-r from-[#D96C4B] to-[#E2845A] hover:from-[#D96C4B]/90 hover:to-[#E2845A]/90 text-white shadow-lg hover:shadow-[#D96C4B]/30 z-0"
                 >
-                  <Link to={`/programa-${program.title.toLowerCase()}`}>
+                  <Link to={`/Contacto-${program.title.toLowerCase()}`}>
                     Saber más
                   </Link>
                 </Button>

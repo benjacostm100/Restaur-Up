@@ -43,13 +43,17 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
+           <motion.div
+           whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}>
             <Button 
               asChild
               variant="outline"
-              className="border-black text-white bg-white/15 backdrop-blur-md hover:bg-orange-200/50 px-5 py-3 text-xs sm:text-base"
+              className="border-black text-white bg-white/15 backdrop-blur-md hover:text-gray-500 px-5 py-3 text-xs sm:text-base"
             >
               <Link to="/metodo">Empieza a ganar dinero de verdad con tu restaurante</Link>
             </Button>
+            </motion.div> 
 
           </div>
         </motion.div>
