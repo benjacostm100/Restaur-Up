@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="relative h-[90vh] sm:h-screen w-full overflow-hidden flex items-center justify-center pt-20 sm:pt-32 pb-16">
+    <section className="relative h-[90vh] sm:h-screen w-full overflow-hidden flex items-center justify-center pt-20 sm:pt-44 pb-16">
       {/* Contenedor parallax */}
       <motion.div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -26,20 +26,20 @@ const Hero = () => {
       </motion.div>
 
       {/* Contenido */}
-      <div className="relative z-10 max-w-3xl px-5 sm:px-6 text-center">
+      <div className="relative z-10 max-w-6xl px-5 sm:px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
         >
-          <h1 className="text-3xl sm:text-5xl font-bold text-white leading-snug sm:leading-tight mb-4 sm:mb-5">
+          <h1 className="text-3xl sm:text-6xl font-bold text-white leading-snug sm:leading-tight mb-4 sm:mb-5">
             Tienes un buen restaurante
             <br />
             <span className="text-[#D96C4B]">Pero no un buen negocio</span>
           </h1>
 
-          <p className="text-base sm:text-lg text-gray-300 mb-6 sm:mb-8 max-w-xs sm:max-w-2xl mx-auto">
-            Transforma tu pasión culinaria en un negocio rentable con nuestro método probado.
+          <p className="text-base sm:text-xl text-gray-200 mb-6 sm:mb-8 max-w-xs sm:max-w-2xl mx-auto">
+             Aumenta un 15% la rentabilidad de tu restaurante con un programa paso a paso, sin grandes cambios ni inversiones.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">

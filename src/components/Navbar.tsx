@@ -39,19 +39,22 @@ const Navbar = () => {
       >
         <div className="max-w-7xl px-4">
           <div className="flex justify-between items-center h-24">
-            {/* Logo */}
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link to="/" onClick={() => window.scrollTo(0, 0)}>
-                <img
-                  src="/logo5.png"
-                  alt="RestaurUP Logo"
-                  className="h-24 md:h-36 xl:h-40 w-auto object-contain"
-                />
-              </Link>
-            </motion.div>
+           {/* Logo */}
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+              <img
+                src="/logo5.png"
+                alt="RestaurUP Logo"
+                className={`w-auto object-contain transition-all duration-300 ${
+                  isScrolled ? "h-28 md:h-36 xl:h-44" : "h-32 md:h-44 xl:h-52"
+                }`}
+              />
+            </Link>
+          </motion.div>
+
 
             {/* Menú horizontal sólo en pantallas grandes */}
-            <div className="hidden lg:flex items-center space-x-6 md:space-x-3 xl:space-x-8">
+            <div className="hidden lg:flex items-center justify-end space-x-4 xl:space-x-4">
               {navItems.map((item) => {
                 const isActive = location.pathname === item.path;
                 return (
@@ -63,9 +66,9 @@ const Navbar = () => {
                   >
                     <Link
                       to={item.path}
-                      className={`relative px-4 py-2 font-light tracking-wide ${
-                        isActive ? "font-semibold text-white" : "text-[#f5f5dc]"
-                      } text-base md:text-xl xl:text-2xl`}
+                      className={`relative px-2 py-2 font-light tracking-wide ${
+                        isActive ? "font-bold text-white" : "text-[#f5f5dc]"
+                      } text-base xl:text-xl font-semibold`}
                     >
                       <span className="relative block py-1">
                         {item.name}
@@ -83,16 +86,16 @@ const Navbar = () => {
                 );
               })}
 
-
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button
                   asChild
-                  className="bg-gradient-to-l from-[#D96C4B] to-orange-800 hover:bg-[#D96C4B]/90 text-white ml-4 shadow-lg hover:shadow-[#D96C4B]/40 transition-all text-lg md:text-xl py-4 md:py-6 px-6 md:px-8"
+                  className="bg-gradient-to-l from-[#D96C4B] to-orange-800 hover:bg-[#D96C4B]/90 text-white ml-4 shadow-lg hover:shadow-[#D96C4B]/40 transition-all text-sm xl:text-base rounded-3xl py-3 px-5"
                 >
                   <Link to="/solicitar-diagnostico">Diagnóstico Gratuito</Link>
                 </Button>
               </motion.div>
             </div>
+
 
             {/* Botón menú hamburguesa para móviles y tablets */}
             <motion.button
