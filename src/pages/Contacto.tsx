@@ -4,11 +4,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, MessageCircle, Send } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef  } from "react";
 import { useToast } from "@/hooks/use-toast";
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 const ContactItem = ({ icon: Icon, title, content, delay }) => {
   const [ref, inView] = useInView({
@@ -37,29 +38,30 @@ const ContactItem = ({ icon: Icon, title, content, delay }) => {
 
 const Contacto = () => {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    nombre: "",
-    email: "",
-    mensaje: ""
-  });
+  const hcaptchaRef = useRef(null);
+  const [formData, setFormData] = useState({ nombre: "", email: "", mensaje: "" });
+  const [hcaptchaToken, setHcaptchaToken] = useState<string | null>(null);
+
 
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "¡Mensaje enviado!",
-      description: "Te responderemos pronto a tu consulta.",
-    });
-    setFormData({
-      nombre: "",
-      email: "",
-      mensaje: ""
-    });
-  };
+    if (!hcaptchaToken) {
+      toast({ title: "Verificación requerida", description: "Por favor, completa el captcha antes de enviar el mensaje." });
+      return;
+    }
+
+    // Aquí enviarías los datos a tu backend o emailjs (incluyendo el token si lo necesitas)
+    toast({ title: "¡Mensaje enviado!", description: "Te responderemos pronto a tu consulta." });
+    setFormData({ nombre: "", email: "", mensaje: "" });
+    hcaptchaRef.current?.resetCaptcha();
+    setHcaptchaToken(null);
+  }  
 
   const contactMethods = [
     {
@@ -83,6 +85,7 @@ const Contacto = () => {
       content: "Calle Restauración, 123\n28001 Madrid, España"
     }
   ];
+
 
   return (
     <Layout>
@@ -200,6 +203,17 @@ const Contacto = () => {
                       placeholder="Escribe tu consulta aquí..."
                     />
                   </div>
+                   {/* hCaptcha */}
+                    <div>
+                      <HCaptcha
+                        sitekey="f0def1c4-ea12-4f32-8b7c-4b4eee4ad2fe"
+                        onVerify={(token) => setHcaptchaToken(token)}
+                        onExpire={() => setHcaptchaToken(null)}
+                        ref={hcaptchaRef}
+                        theme="dark"
+                      />
+                    </div>
+
                   <motion.div
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
