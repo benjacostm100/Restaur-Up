@@ -67,13 +67,18 @@ const Metodo = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Button
+           <Button 
               asChild
-              size="lg"
-              className="bg-gradient-to-r from-[#D96C4B] to-orange-600 hover:from-[#D96C4B]/90 hover:to-orange-600/90 text-white"
+              variant="link"
+              className="group text-[#D96C4B] hover:text-white"
             >
-              <Link to="/programa">
-                Conocer el método <ArrowRight className="ml-2 h-5 w-5" />
+              <Link to="/contacto" className="flex items-center">
+                <span className="bg-gradient-to-r from-[#D96C4B] to-[#E2845A] bg-clip-text text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all">
+                  Conocer el método 
+                </span>
+                <span className="ml-2 group-hover:translate-x-2 transition-transform">
+                  <ArrowRight className="text-[#D96C4B] group-hover:text-white" />
+                </span>
               </Link>
             </Button>
           </motion.div>

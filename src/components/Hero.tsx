@@ -22,7 +22,7 @@ const Hero = () => {
         }}
       >
         {/* Overlay degradado */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/75 to-black/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-black/75 to-black/20"></div>
       </motion.div>
 
       {/* Contenido */}
@@ -64,7 +64,7 @@ const Hero = () => {
             className="mx-auto text-[#D96C4B] animate-bounce" 
             size={22} 
           />
-          <span className="block mt-2 text-xs sm:text-sm text-gray-400">Desplázate para descubrir</span>
+          <span className="block mt-2 text-xs sm:text-sm text-gray-300">Desplázate para descubrir</span>
         </motion.div>
       </div>
     </section>

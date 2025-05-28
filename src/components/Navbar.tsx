@@ -91,7 +91,7 @@ const Navbar = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button
                   asChild
-                  className="bg-gradient-to-l from-[#D96C4B] to-orange-600 hover:bg-[#D96C4B]/90 text-white ml-4 shadow-lg hover:shadow-[#D96C4B]/40 transition-all text-xl py-6 px-8"
+                  className="bg-gradient-to-l from-[#D96C4B] to-orange-800 hover:bg-[#D96C4B]/90 text-white ml-4 shadow-lg hover:shadow-[#D96C4B]/40 transition-all text-xl py-6 px-8"
                 >
                   <Link to="/solicitar-diagnostico">Diagnóstico Gratuito</Link>
                 </Button>

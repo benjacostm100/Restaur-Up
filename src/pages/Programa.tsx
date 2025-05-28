@@ -70,12 +70,16 @@ const Programa = () => {
           <motion.div variants={item}>
             <Button 
               asChild
-              size="lg"
-              className="bg-gradient-to-r from-[#D96C4B] to-[#FF9068] text-white px-8 py-6 text-lg group"
+              variant="link"
+              className="group text-[#D96C4B] hover:text-white"
             >
-              <Link to="/contacto">
-                Contactanos!
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              <Link to="/metodo" className="flex items-center">
+                <span className="bg-gradient-to-r from-[#D96C4B] to-[#E2845A] bg-clip-text text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all">
+                  Contactanos!
+                </span>
+                <span className="ml-2 group-hover:translate-x-2 transition-transform">
+                  <ArrowRight className="text-[#D96C4B] group-hover:text-white" />
+                </span>
               </Link>
             </Button>
           </motion.div>
