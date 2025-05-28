@@ -1,112 +1,220 @@
-import { Facebook, Instagram, MessageCircle, Globe, Phone, MapPin, Mail } from "lucide-react";
+import { Facebook, Instagram, MessageCircle, Globe, Phone, MapPin, Mail, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
-const legalLinks = [
-  { name: "Política de Privacidad", href: "#" },
-  { name: "Términos y Condiciones", href: "#" },
-  { name: "Aviso Legal", href: "#" },
-];
+const FooterLink = ({ href, children, index }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  return (
+    <motion.li
+      ref={ref}
+      initial={{ opacity: 0, x: -20 }}
+      animate={inView ? { opacity: 1, x: 0 } : {}}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+    >
+      <a
+  href={href}
+  className="text-gray-400 hover:text-[#D96C4B] transition-all flex items-center group"
+>
+  <span className="flex items-center gap-1">
+    {children}
+    <ArrowRight className="w-4 h-3 text-[#D96C4B] opacity-0 transform translate-x-[-5px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+  </span>
+</a>
+
+    </motion.li>
+  );
+};
+
+
+const ContactItem = ({ icon: Icon, text, href, index }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5, delay: index * 0.15 }}
+      className="flex items-start gap-3 group"
+    >
+      <div className="bg-[#D96C4B]/10 p-2 rounded-lg group-hover:bg-[#D96C4B]/20 transition-colors">
+        <Icon className="text-[#D96C4B] w-5 h-5" />
+      </div>
+      <a href={href} className="text-gray-400 hover:text-white transition-colors">
+        {text}
+      </a>
+    </motion.div>
+  );
+};
+
+const SocialIcon = ({ icon: Icon, href, index }) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  return (
+    <motion.a
+      ref={ref}
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={inView ? { opacity: 1, scale: 1 } : {}}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-gray-800 hover:bg-[#D96C4B] text-gray-400 hover:text-white p-3 rounded-full transition-all"
+    >
+      <Icon size={20} />
+    </motion.a>
+  );
+};
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const legalLinks = [
+    { name: "Política de Privacidad", href: "#" },
+    { name: "Términos y Condiciones", href: "#" },
+    { name: "Aviso Legal", href: "#" },
+  ];
+
+  const contactItems = [
+    { icon: Mail, text: "info@restaurup.com", href: "mailto:info@restaurup.com" },
+    { icon: Phone, text: "+34 900 123 456", href: "tel:+34900123456" },
+    { icon: MapPin, text: "Calle Ejemplo 123, Madrid", href: "#" },
+    { icon: Globe, text: "www.restaurup.com", href: "https://www.restaurup.com" },
+  ];
+
+  const socialLinks = [
+    { icon: Facebook, href: "https://facebook.com" },
+    { icon: Instagram, href: "https://instagram.com" },
+    { icon: MessageCircle, href: "https://wa.me/34900123456" },
+  ];
 
   return (
-    <footer className="bg-white text-[#333333]">
-      <div className="container mx-auto px-8 py-12">
-        {/* Secciones principales */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* RestaurUP - Primera columna */}
-          <div className="flex flex-col items-center text-center md:border-r md:border-gray-300">
-            <h3 className="text-2xl font-bold text-[#D96C4B] mb-4">RestaurUP</h3>
-            <p className="mb-4 text-gray-600 text-sm max-w-xs">
-              Rentabilidad y estructura para restaurantes que quieren funcionar como un negocio.
-            </p>
-            <div className="flex space-x-4">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#D96C4B] transition-colors"
-              >
-                <Facebook size={20} />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#D96C4B] transition-colors"
-              >
-                <Instagram size={20} />
-              </a>
-              <a
-                href="https://wa.me/34900123456"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#D96C4B] transition-colors"
-              >
-                <MessageCircle size={20} />
-              </a>
-              <a
-                href="https://www.restaurup.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#D96C4B] transition-colors"
-              >
-                <Globe size={20} />
-              </a>
-            </div>
-          </div>
+    <footer className="bg-white text-gray-800 pt-20 pb-12 relative overflow-hidden">
+  {/* Elementos decorativos */}
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#D96C4B]/5 to-transparent"></div>
+    <div className="absolute top-20 right-20 w-40 h-40 rounded-full bg-[#D96C4B]/10 blur-3xl"></div>
+  </div>
 
-          {/* Contacto - Segunda columna */}
-          <div className="flex flex-col items-center text-center md:border-r md:border-gray-300">
-            <h4 className="text-lg font-bold mb-4">Contacto</h4>
-            <div className="space-y-3 max-w-xs">
-              <div className="flex items-start gap-2">
-                <Mail size={18} className="text-[#D96C4B] mt-1" />
-                <a href="mailto:info@restaurup.com" className="text-sm hover:text-[#D96C4B] transition-colors">
-                  info@restaurup.com
-                </a>
-              </div>
-              <div className="flex items-start gap-2">
-                <Phone size={18} className="text-[#D96C4B] mt-1" />
-                <a href="tel:+34900123456" className="text-sm hover:text-[#D96C4B] transition-colors">
-                  +34 900 123 456
-                </a>
-              </div>
-              <div className="flex items-start gap-2">
-                <MapPin size={18} className="text-[#D96C4B] mt-1" />
-                <a href="https://www.restaurup.com" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-[#D96C4B] transition-colors">
-                  www.restaurup.com
-                </a>
-              </div>
-            </div>
-          </div>
+  <div className="container mx-auto px-6 relative z-10">
+    {/* Contenido principal */}
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8 }}
+      className="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-16"
+    >
+      {/* Logo y descripción */}
+      <div className="space-y-6">
+        <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.2 }}>
+          <h3 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#D96C4B] to-orange-500">
+            RestaurUP
+          </h3>
+          <p className="text-gray-600 mt-4">
+            Rentabilidad y estructura para restaurantes que quieren funcionar como un negocio.
+          </p>
+        </motion.div>
 
-          {/* Legal - Tercera columna */}
-          <div className="flex flex-col items-center text-center">
-            <h4 className="text-lg font-bold mb-4">Legal</h4>
-            <nav>
-              <ul className="space-y-2">
-                {legalLinks.map((link) => (
-                  <li key={link.name}>
-                    <a
-                      href={link.href}
-                      className="text-sm text-gray-600 hover:text-[#D96C4B] transition-colors"
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
-        </div>
-
-        {/* Copyright */}
-        <div className="border-t border-gray-300 mt-8 pt-6 text-center text-sm text-[#D96C4B] font-semibold">
-          <p>&copy; {currentYear} RestaurUP | Rentabilidad y estructura para restaurantes que quieren funcionar como un negocio</p>
-        </div>
+        <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.4 }} className="flex space-x-4">
+          {socialLinks.map((social, index) => (
+            <motion.a
+              key={index}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              ref={ref}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-gray-200 hover:bg-[#D96C4B] text-gray-600 hover:text-white p-3 rounded-full transition-all"
+            >
+              <social.icon size={20} />
+            </motion.a>
+          ))}
+        </motion.div>
       </div>
-    </footer>
+
+      {/* Contacto */}
+      <div className="space-y-6">
+        <motion.h4 initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.2 }} className="text-xl font-bold text-gray-800">
+          Contacto
+        </motion.h4>
+        <ul className="space-y-4">
+          {contactItems.map((item, index) => (
+            <motion.div
+              key={index}
+              ref={ref}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
+              className="flex items-start gap-3 group"
+            >
+              <div className="bg-[#D96C4B]/10 p-2 rounded-lg group-hover:bg-[#D96C4B]/20 transition-colors">
+                <item.icon className="text-[#D96C4B] w-5 h-5" />
+              </div>
+              <a href={item.href} className="text-gray-600 hover:text-[#D96C4B] transition-colors">
+                {item.text}
+              </a>
+            </motion.div>
+          ))}
+        </ul>
+      </div>
+
+      {/* Legal */}
+      <div className="space-y-6">
+        <motion.h4 initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.2 }} className="text-xl font-bold text-gray-800">
+          Legal
+        </motion.h4>
+        <ul className="space-y-3">
+          {legalLinks.map((link, index) => (
+            <FooterLink key={index} href={link.href} index={index}>
+              {link.name}
+            </FooterLink>
+          ))}
+        </ul>
+      </div>
+
+      {/* Newsletter */}
+      <div className="space-y-6">
+        <motion.h4 initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.2 }} className="text-xl font-bold text-gray-800">
+          Suscríbete
+        </motion.h4>
+        <motion.p initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.4 }} className="text-gray-600">
+          Recibe consejos y actualizaciones directamente en tu correo.
+        </motion.p>
+        <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.6 }} className="flex">
+          <input type="email" placeholder="Tu email" className="bg-gray-100 text-gray-800 px-4 py-3 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-[#D96C4B] w-full" />
+          <button className="bg-gradient-to-r from-[#D96C4B] to-orange-600 hover:from-[#D96C4B]/90 hover:to-orange-600/90 text-white px-4 py-3 rounded-r-lg transition-all">
+            <ArrowRight size={20} />
+          </button>
+        </motion.div>
+      </div>
+    </motion.div>
+
+    {/* Copyright */}
+    <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.8 }} className="border-t border-gray-300 pt-8 text-center">
+      <p className="text-gray-500">
+        &copy; {currentYear} RestaurUP. Todos los derechos reservados.
+      </p>
+    </motion.div>
+  </div>
+</footer>
+
   );
 }

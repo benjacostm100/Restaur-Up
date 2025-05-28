@@ -31,13 +31,13 @@ const Navbar = () => {
     <>
       {/* Navbar Principal */}
       <nav
-        className={`fixed w-full top-0 left-0 z-50 transition-all duration-300 ${
+        className={`fixed w-full top-0 z-50 transition-all duration-300 ${
           isScrolled
             ? "bg-black/80 backdrop-blur-md shadow-lg py-1"
             : "bg-transparent backdrop-blur-5 "
         }`}
       >
-        <div className="max-w-7xl px-4">
+        <div className="px-3">
           <div className="flex justify-between items-center h-24">
            {/* Logo */}
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -66,7 +66,7 @@ const Navbar = () => {
                   >
                     <Link
                       to={item.path}
-                      className={`relative px-2 py-2 font-light tracking-wide ${
+                      className={`relative py-2 font-light tracking-wide ${
                         isActive ? "font-bold text-white" : "text-[#f5f5dc]"
                       } text-base xl:text-xl font-semibold`}
                     >

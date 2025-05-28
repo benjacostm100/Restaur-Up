@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="relative h-[90vh] sm:h-screen w-full overflow-hidden flex items-center justify-center pt-20 sm:pt-44 pb-16">
+    <section className="relative h-[90vh] sm:h-screen w-full overflow-hidden flex items-center justify-center pt-36 sm:pt-44 md:pt-48 pb-16">
       {/* Contenedor parallax */}
       <motion.div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -26,40 +26,37 @@ const Hero = () => {
       </motion.div>
 
       {/* Contenido */}
-      <div className="relative z-10 max-w-6xl px-5 sm:px-6 text-center">
+      <div className="relative z-10 max-w-6xl px-5 sm:px-6 md:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
         >
-          <h1 className="text-3xl sm:text-6xl font-bold text-white leading-snug sm:leading-tight mb-4 sm:mb-5">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-snug sm:leading-tight mb-4 sm:mb-5 md:mb-6">
             Tienes un buen restaurante
             <br />
             <span className="text-[#D96C4B]">Pero no un buen negocio</span>
           </h1>
 
-          <p className="text-base sm:text-xl text-gray-200 mb-6 sm:mb-8 max-w-xs sm:max-w-2xl mx-auto">
-             Aumenta un 15% la rentabilidad de tu restaurante con un programa paso a paso, sin grandes cambios ni inversiones.
+          <p className="text-sm md:text-lg lg:text-xl text-gray-200 mb-6 sm:mb-8 md:mb-10 max-w-xs md:max-w-xl lg:max-w-2xl mx-auto">
+            Aumenta un 15% la rentabilidad de tu restaurante con un programa paso a paso, sin grandes cambios ni inversiones.
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-           <motion.div
-           whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}>
-            <Button 
-              asChild
-              variant="outline"
-              className="border-black text-white bg-white/15 backdrop-blur-md hover:text-gray-500 px-5 py-3 text-xs sm:text-base"
-            >
-              <Link to="/metodo">Empieza a ganar dinero de verdad con tu restaurante</Link>
-            </Button>
-            </motion.div> 
-
+          <div className="flex flex-col sm:flex-row md:flex-row justify-center gap-4">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button 
+                asChild
+                variant="outline"
+                className="border-black text-white bg-white/15 backdrop-blur-md hover:text-gray-500 px-5 py-3 text-xs md:text-sm lg:text-base"
+              >
+                <Link to="/metodo">Empieza a ganar dinero de verdad con tu restaurante</Link>
+              </Button>
+            </motion.div>
           </div>
         </motion.div>
 
         <motion.div
-          className="mt-10 sm:mt-16"
+          className="mt-10 sm:mt-16 md:mt-20"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.8 }}
@@ -68,7 +65,7 @@ const Hero = () => {
             className="mx-auto text-[#D96C4B] animate-bounce" 
             size={22} 
           />
-          <span className="block mt-2 text-xs sm:text-sm text-gray-300">Desplázate para descubrir</span>
+          <span className="block mt-2 text-xs sm:text-sm md:text-base text-gray-300">Desplázate para descubrir</span>
         </motion.div>
       </div>
     </section>
