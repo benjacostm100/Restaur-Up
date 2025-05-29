@@ -118,15 +118,23 @@ export default function Footer() {
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8 }}
-      className="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-16"
+      className="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-16 text-center lg:text-left items-center lg:items-start"
+
     >
       {/* Logo y descripción */}
-      <div className="space-y-6">
-        <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.2 }}>
-          <h3 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#D96C4B] to-orange-500">
-            RestaurUP
-          </h3>
-          <p className="text-gray-600 mt-4">
+      <div className="space-y-6 flex flex-col items-center lg:items-start">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ delay: 0.2 }}
+          className="flex flex-col gap-6 items-center lg:items-start"
+        >
+          <img
+            src="/logo1.png"
+            alt="RestaurUP logo"
+            className="h-auto w-44"
+          />
+          <p className="text-gray-600">
             Rentabilidad y estructura para restaurantes que quieren funcionar como un negocio.
           </p>
         </motion.div>
@@ -151,7 +159,7 @@ export default function Footer() {
       </div>
 
       {/* Contacto */}
-      <div className="space-y-6">
+      <div className="space-y-6 flex flex-col items-center lg:items-start">
         <motion.h4 initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.2 }} className="text-xl font-bold text-gray-800">
           Contacto
         </motion.h4>
@@ -177,7 +185,7 @@ export default function Footer() {
       </div>
 
       {/* Legal */}
-      <div className="space-y-6">
+      <div className="space-y-6 flex flex-col items-center lg:items-start">
         <motion.h4 initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.2 }} className="text-xl font-bold text-gray-800">
           Legal
         </motion.h4>
@@ -191,7 +199,7 @@ export default function Footer() {
       </div>
 
       {/* Newsletter */}
-      <div className="space-y-6">
+      <div className="space-y-6 flex flex-col items-center lg:items-start">
         <motion.h4 initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.2 }} className="text-xl font-bold text-gray-800">
           Suscríbete
         </motion.h4>
