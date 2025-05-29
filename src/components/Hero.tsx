@@ -11,39 +11,50 @@ const images = [
   "imagenes/hero4.jpg",
 ];
 
+
 const Hero = () => {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1); // 1 for forward, -1 for backward
 
+  // ⬇ Efecto para cambiar de slide cada 8 segundos
   useEffect(() => {
     const interval = setInterval(() => {
       setDirection(1);
       setIndex((prev) => (prev + 1) % images.length);
-    }, 7000);
-
+    }, 8000);
     return () => clearInterval(interval);
+  }, []);
+
+  // ⬇ Pre-cargar las imágenes al iniciar el componente
+  useEffect(() => {
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
   }, []);
 
   // Efecto de degradado entre imágenes
   const variants = {
-    enter: (direction: number) => ({
-      opacity: 0,
-      x: direction > 0 ? 1000 : -1000,
-      scale: 1.05
-    }),
-    center: {
-      opacity: 1,
-      x: 0,
-      scale: 1,
-      transition: { duration: 1.2, ease: [0.32, 0.72, 0, 1] }
-    },
-    exit: (direction: number) => ({
-      opacity: 0,
-      x: direction < 0 ? 1000 : -1000,
-      scale: 0.95,
-      transition: { duration: 1.2, ease: [0.32, 0.72, 0, 1] }
-    })
-  };
+  enter: (direction: number) => ({
+    opacity: 0,
+    x: direction > 0 ? 100 : -100, // Más pequeño el desplazamiento
+    scale: 1.02,
+  }),
+  center: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] } // Más rápido y suave
+  },
+  exit: (direction: number) => ({
+    opacity: 0,
+    x: direction < 0 ? 100 : -100,
+    scale: 0.98,
+    transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] }
+  }),
+};
+
+
 
   return (
     <section className="relative h-[90vh] bg-black sm:h-screen w-full overflow-hidden flex items-center justify-center pt-36 sm:pt-44 md:pt-48 pb-16">
@@ -52,22 +63,20 @@ const Hero = () => {
 
       {/* Contenedor de imágenes con transición */}
       <AnimatePresence custom={direction} mode="popLayout">
-        <motion.div
-          key={index}
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('${images[index]}')`,
-            backgroundSize: "cover"
-          }}
-          custom={direction}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-        >
-          <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-black/50 to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-black/40"></div>
-        </motion.div>
+      <motion.div
+        key={index}
+        custom={direction}
+        variants={variants}
+        initial="enter"
+        animate="center"
+        exit="exit"
+        className={`absolute inset-0 bg-center bg-cover bg-fixed`}
+        style={{ backgroundImage: `url(${images[index]})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-black/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-black/40"></div>
+      </motion.div>
+
       </AnimatePresence>
 
       {/* Contenido */}
@@ -100,7 +109,7 @@ const Hero = () => {
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7, duration: 0.5 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
             >
               <Button
                 asChild
