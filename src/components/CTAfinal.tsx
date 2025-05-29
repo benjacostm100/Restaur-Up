@@ -42,30 +42,9 @@ const CtaFinal = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#0D0D0D] via-[#1A1A1A] to-[#0D0D0D] py-16 px-6">
-      <div className="absolute inset-0 opacity-10">
-        {[...Array(60)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-[#D96C4B]"
-            style={{
-              width: Math.random() * 20 + 2 + 'px',
-              height: Math.random() * 20 + 2 + 'px',
-              left: Math.random() * 100 + '%',
-              top: Math.random() * 100 + '%',
-            }}
-            animate={{
-              y: [0, (Math.random() - 0.5) * 50],
-              x: [0, (Math.random() - 0.5) * 30],
-              opacity: [0.2, 0.8, 0.2],
-            }}
-            transition={{
-              duration: Math.random() * 10 + 10,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-          />
-        ))}
+    <section className="relative overflow-hidden bg-[#0D0D0D] py-16 px-6">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==')] opacity-20"></div>
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -89,24 +68,25 @@ const CtaFinal = () => {
           >
             {/* Columna 1 */}
             <motion.div 
-              className="bg-gradient-to-br from-[#1A1A1A] to-[#0D0D0D] p-6 rounded-2xl border border-[#2A2A2A] shadow-2xl"
+              className="bg-[#1A1A1A] p-8 rounded-xl border border-[#D96C4B]/20 shadow-lg backdrop-blur-sm relative overflow-hidden"
               variants={itemVariants}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ y: -5 }}
             >
+              <div className="absolute -right-10 -top-10 w-32 h-32 bg-[#D96C4B]/10 rounded-full filter blur-xl"></div>
               <motion.h3 
-                className="text-2xl font-semibold mb-5 bg-clip-text text-transparent bg-gradient-to-r from-[#D96C4B] to-[#FF9068]"
+                className="text-2xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#D96C4B] to-[#FF9068] relative z-10"
                 variants={itemVariants}
               >
                 Esto es para ti si...
               </motion.h3>
-              <ul className="space-y-4">
+              <ul className="space-y-4 relative z-10">
                 {estoEsParaTi.map((item, index) => (
                   <motion.li 
                     key={index} 
                     className="flex items-start gap-4 group"
                     variants={itemVariants}
                   >
-                    <div className="p-2 bg-[#7ED957]/10 rounded-full">
+                    <div className="p-2 bg-[#7ED957]/10 rounded-full group-hover:bg-[#7ED957]/20 transition-all">
                       <CheckCircle className="text-[#7ED957] flex-shrink-0" size={22} />
                     </div>
                     <p className="text-gray-300 text-base group-hover:text-white transition-colors">{item}</p>
@@ -117,24 +97,25 @@ const CtaFinal = () => {
 
             {/* Columna 2 */}
             <motion.div 
-              className="bg-gradient-to-br from-[#1A1A1A] to-[#0D0D0D] p-6 rounded-2xl border border-[#2A2A2A] shadow-2xl"
+              className="bg-[#1A1A1A] p-8 rounded-xl border border-[#7ED957]/20 shadow-lg backdrop-blur-sm relative overflow-hidden"
               variants={itemVariants}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ y: -5 }}
             >
+              <div className="absolute -left-10 -bottom-10 w-32 h-32 bg-[#7ED957]/10 rounded-full filter blur-xl"></div>
               <motion.h3 
-                className="text-2xl font-semibold mb-5 bg-clip-text text-transparent bg-gradient-to-r from-[#D96C4B] to-[#FF9068]"
+                className="text-2xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#D96C4B] to-[#FF9068] relative z-10"
                 variants={itemVariants}
               >
                 Funcionará para ti aunque...
               </motion.h3>
-              <ul className="space-y-4">
+              <ul className="space-y-4 relative z-10">
                 {funcionaraAunque.map((item, index) => (
                   <motion.li 
                     key={index} 
                     className="flex items-start gap-4 group"
                     variants={itemVariants}
                   >
-                    <div className="p-2 bg-[#7ED957]/10 rounded-full">
+                    <div className="p-2 bg-[#7ED957]/10 rounded-full group-hover:bg-[#7ED957]/20 transition-all">
                       <CheckCircle className="text-[#7ED957] flex-shrink-0" size={22} />
                     </div>
                     <p className="text-gray-300 text-base group-hover:text-white transition-colors">{item}</p>
@@ -146,10 +127,30 @@ const CtaFinal = () => {
 
           <motion.div variants={itemVariants}>
             <Button
-              className=" border-[#D96C4B] bg-[#D96C4B]/10 text-[#D96C4B] hover:bg-white/10 hover:text-[#D96C4B] border transition-all group text-base"
+              className="relative overflow-hidden isolate border-none bg-transparent text-white transition-all duration-500 group px-10 py-6 rounded-sm"
             >
-              Solicita tu diagnóstico gratuito
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
+              {/* Fondo con efecto glassmorphism y blur */}
+              <div className="absolute inset-0 bg-[#D96C4B]/20 backdrop-blur-md border border-[#FF9068]/30 rounded-xl group-hover:bg-[#D96C4B]/30 transition-all duration-500"></div>
+              
+              {/* Efecto de gradiente animado */}
+              <div className="absolute inset-0 bg-[conic-gradient(from_90deg_at_50%_50%,#D96C4B_0%,#FF9068_50%,#D96C4B_100%)] opacity-0 group-hover:opacity-30 transition-opacity duration-700 rounded-xl animate-rotate-gradient"></div>
+              
+              {/* Borde luminoso */}
+              <div className="absolute inset-0 rounded-sm p-[1px] pointer-events-none">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#D96C4B] to-[#FF9068] opacity-0 group-hover:opacity-100 rounded-xl transition-opacity duration-500"></div>
+              </div>
+              
+              {/* Contenido del botón */}
+              <span className="relative z-10 font-bold text-lg tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">
+                Solicita tu diagnóstico gratuito
+              </span>
+              <ArrowRight 
+                className="ml-3 group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300 relative z-10" 
+                size={20}
+              />
+              
+
+
             </Button>
           </motion.div>
         </motion.div>

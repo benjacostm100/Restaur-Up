@@ -289,7 +289,7 @@ const Programa = () => {
           </Button>
 
           <p className="text-gray-500 text-sm mt-6">
-            Garantía: Si no ves mejoras en 3 meses, seguimos trabajando contigo sin costo adicional.
+            Garantía: Si no ves mejoras en 3 meses, seguimos trabajando contigo sin coste adicional.
           </p>
         </motion.div>
       </section>

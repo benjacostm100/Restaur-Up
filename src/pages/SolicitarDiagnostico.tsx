@@ -74,7 +74,7 @@ const SolicitarDiagnostico = () => {
             className="text-center mb-16"
           >
             <span className="inline-block bg-[#D96C4B]/10 text-[#D96C4B] px-4 py-2 rounded-full text-sm font-semibold mb-4">
-              Diagnóstico sin costo
+              Diagnóstico sin coste
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#D96C4B] to-orange-500 dark:from-[#D96C4B] dark:to-orange-400">
               Optimiza tu restaurante hoy
@@ -152,7 +152,7 @@ const SolicitarDiagnostico = () => {
                       id="mejorar"
                       value={formData.mejorar}
                       onChange={(e) => setFormData({...formData, mejorar: e.target.value})}
-                      placeholder="Ej: Reducir costos, mejorar procesos, aumentar ventas..."
+                      placeholder="Ej: Reducir costes, mejorar procesos, aumentar ventas..."
                     />
                   </div>
 

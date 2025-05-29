@@ -13,7 +13,7 @@ const IndexSections = () => {
   ];
 
   const modulos = [
-    { icon: Utensils, text: "Control de costos" },
+    { icon: Utensils, text: "Control de costes" },
     { icon: Receipt, text: "Gestión operativa" },
     { icon: TrendingUp, text: "Revenue Management" },
     { icon: Settings, text: "Procesos Estandarizados" },
@@ -56,25 +56,25 @@ const IndexSections = () => {
   };
 
   return (
-    <section className="relative bg-gradient-to-b from-gray-950/80 via-gray-950 to-orange-200 overflow-hidden py-24 px-4">
+    <section className="relative bg-gradient-to-b from-black via-orange-950/90 to-gray-950 overflow-hidden py-24 px-4">
 
       {/* 🌌 Efectos de fondo modernos */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Partículas animadas */}
         <div className="absolute inset-0 opacity-10">
-          {[...Array(20)].map((_, i) => (
+          {[...Array(80)].map((_, i) => (
             <motion.div
               key={i}
               className="absolute bg-[#D96C4B] rounded-full"
               style={{
-                width: Math.random() * 6 + 2 + 'px',
-                height: Math.random() * 6 + 2 + 'px',
+                width: Math.random() * 12 + 2 + 'px',
+                height: Math.random() * 12 + 2 + 'px',
                 left: Math.random() * 100 + '%',
                 top: Math.random() * 100 + '%',
               }}
               animate={{
-                y: [0, (Math.random() - 0.5) * 40],
-                x: [0, (Math.random() - 0.5) * 40],
+                y: [0, (Math.random() - 0.5) * 100],
+                x: [0, (Math.random() - 0.5) * 100],
                 opacity: [0.3, 0.8, 0.3],
               }}
               transition={{
