@@ -141,7 +141,7 @@ export default function CasosCarousel() {
           onMouseEnter={() => setAutoPlay(false)}
           onMouseLeave={() => setAutoPlay(true)}
         >
-
+         
           {/* Contenido del carousel */}
           <motion.div
             key={currentIndex}

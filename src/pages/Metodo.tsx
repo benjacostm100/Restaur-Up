@@ -159,7 +159,7 @@ const Metodo = () => {
       {/* Cierre Inspirador */}
       <section className="relative py-32 px-4 text-center overflow-hidden bg-gradient-to-b from-black/90 to-black">
         <div className="absolute inset-0 z-0 opacity-30 ">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80')] bg-cover bg-center opacity-40"></div>
+          <div className="absolute inset-0 bg-[url('imagenes/metodo.avif')] bg-cover bg-center opacity-40"></div>
         </div>
         
         <div className="relative z-10 max-w-4xl mx-auto">
