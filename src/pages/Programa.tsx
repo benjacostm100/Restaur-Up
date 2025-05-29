@@ -1,9 +1,10 @@
-import { CheckCircle, ArrowRight, ChevronRight } from "lucide-react";
+import { CheckCircle, ArrowRight, ChevronRight, Lightbulb, Rocket, Headset  } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
+
 
 const Programa = () => {
   const container = {
@@ -87,75 +88,126 @@ const Programa = () => {
       </section>
 
       {/* Differentiator Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-black to-[#1A1A1A]">
-        <div className="max-w-6xl mx-auto">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={container}
-            className="text-center mb-16"
-          >
-            <motion.h2 
-              className="text-3xl md:text-4xl font-bold text-white mb-6"
-              variants={item}
-            >
-              ¿Por qué <span className="text-[#D96C4B]">funciona</span>?
-            </motion.h2>
-            
-            <motion.p 
-              className="text-gray-400 max-w-3xl mx-auto text-lg"
-              variants={item}
-            >
-              Un enfoque práctico basado en años de experiencia optimizando restaurantes
-            </motion.p>
-          </motion.div>
+<section className="relative py-24 px-4 bg-gradient-to-b from-black to-[#1A1A1A] overflow-hidden">
+  {/* Efectos de fondo */}
+  <div className="absolute inset-0 opacity-20">
+    <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#D96C4B]/30 to-transparent"></div>
+    <div className="absolute bottom-0 left-0 w-1/3 h-full bg-gradient-to-r from-[#7ED957]/10 to-transparent"></div>
+  </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <motion.div
-              whileHover={{ y: -10 }}
-              initial="hidden"
-              whileInView="visible"
-              variants={item}
-              className="bg-[#1A1A1A] p-8 rounded-xl border border-gray-800 hover:border-[#D96C4B]/50 transition-all"
-            >
-              <div className="bg-[#D96C4B]/10 w-14 h-14 rounded-full flex items-center justify-center mb-6">
-                <CheckCircle className="text-[#D96C4B]" size={28} />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">No es teoría</h3>
-              <p className="text-gray-400">Estrategias prácticas adaptadas a la realidad de tu restaurante</p>
-            </motion.div>
+  {/* Título principal */}
+  <div className="relative z-10 text-center mb-16">
+    <motion.h2 
+      className="text-4xl md:text-5xl font-bold text-white leading-tight"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={item}
+    >
+      ¿Por qué <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D96C4B] to-[#FF9068]">funciona</span> RestaurUP?
+    </motion.h2>
+  </div>
 
-            <motion.div
-              whileHover={{ y: -10 }}
-              initial="hidden"
-              whileInView="visible"
-              variants={item}
-              className="bg-[#1A1A1A] p-8 rounded-xl border border-gray-800 hover:border-[#D96C4B]/50 transition-all"
-            >
-              <div className="bg-[#D96C4B]/10 w-14 h-14 rounded-full flex items-center justify-center mb-6">
-                <CheckCircle className="text-[#D96C4B]" size={28} />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Resultados rápidos</h3>
-              <p className="text-gray-400">Mejoras visibles desde las primeras semanas</p>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ y: -10 }}
-              initial="hidden"
-              whileInView="visible"
-              variants={item}
-              className="bg-[#1A1A1A] p-8 rounded-xl border border-gray-800 hover:border-[#D96C4B]/50 transition-all"
-            >
-              <div className="bg-[#D96C4B]/10 w-14 h-14 rounded-full flex items-center justify-center mb-6">
-                <CheckCircle className="text-[#D96C4B]" size={28} />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Acompañamiento</h3>
-              <p className="text-gray-400">Soporte continuo en cada etapa del proceso</p>
-            </motion.div>
+  {/* Contenedor principal */}
+  <div className="max-w-7xl mx-auto relative z-10">
+    <motion.div 
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      variants={container}
+      className="flex flex-col lg:flex-row gap-12 items-center mb-20"
+    >
+      {/* Columna de texto */}
+      <div className="lg:w-1/2">
+        <motion.div 
+          className="text-gray-300 space-y-6 text-lg lg:text-xl"
+          variants={item}
+        >
+          <p className="flex items-start gap-3">
+            <span className="text-[#D96C4B] font-bold mt-1">•</span>
+            <span><strong className="text-white font-semibold">RestaurUP no es teoría.</strong> Es un sistema creado por quien ha gestionado restaurantes como el tuyo.</span>
+          </p>
+          
+          <p className="flex items-start gap-3">
+            <span className="text-[#D96C4B] font-bold mt-1">•</span>
+            <span>He vivido tus mismos dolores: <span className="text-white">márgenes que no cuadran</span>, <span className="text-white">equipo descoordinado</span>, <span className="text-white">decisiones a ciegas</span>.</span>
+          </p>
+          
+          <p className="flex items-start gap-3">
+            <span className="text-[#D96C4B] font-bold mt-1">•</span>
+            <span>Soy Fran Cabello, con <span className="text-white">15+ años liderando operaciones</span> y mi propio restaurante. Sé lo que es preguntarte si saldrán los números.</span>
+          </p>
+          
+          <p className="flex items-start gap-3">
+            <span className="text-[#D96C4B] font-bold mt-1">•</span>
+            <span><span className="text-white font-semibold">RestaurUP existe para que no vayas a ciegas</span>, sino con <span className="text-white">método, estructura y foco</span>.</span>
+          </p>
+        </motion.div>
+      </div>
+      
+      {/* Columna de imagen */}
+      <motion.div 
+        className="lg:w-1/2 relative"
+        variants={item}
+        whileHover={{ scale: 1.02 }}
+      >
+        <div className="relative rounded-2xl overflow-hidden border-2 border-[#D96C4B]/30 shadow-2xl">
+          <img 
+            src="imagenes/pro.jpg" 
+            alt="Fran Cabello en un restaurante"
+            className="w-full h-auto object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+          <div className="absolute bottom-6 left-6 right-6">
+            <div className="bg-black/40 backdrop-blur-md text-sm text-white/70 font-normal py-2 px-4 rounded-md">
+              "He estado en tu lugar. Sé exactamente lo que necesitas."
+            </div>
           </div>
         </div>
-      </section>
+      </motion.div>
+    </motion.div>
+
+    {/* Tarjetas de beneficios */}
+    <div className="grid md:grid-cols-3 gap-8 relative">
+      <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-transparent via-[#D96C4B] to-transparent opacity-30"></div>
+
+      {[
+        {
+          icon: <Lightbulb className="text-[#D96C4B]" size={28} />,
+          title: "No es teoría",
+          description: "Estrategias prácticas probadas en restaurantes reales"
+        },
+        {
+          icon: <Rocket className="text-[#D96C4B]" size={28} />,
+          title: "Resultados rápidos",
+          description: "Impacto medible desde las primeras 4 semanas"
+        },
+        {
+          icon: <Headset className="text-[#D96C4B]" size={28} />,
+          title: "Acompañamiento",
+          description: "Soporte 1:1 en cada etapa del proceso"
+        }
+      ].map((feature, index) => (
+        <motion.div
+          key={index}
+          whileHover={{ y: -10, borderColor: "#D96C4B" }}
+          initial="hidden"
+          whileInView="visible"
+          variants={item}
+          className="bg-[#1A1A1A]/80 backdrop-blur-md p-8 rounded-xl border border-gray-800 hover:shadow-lg hover:shadow-[#D96C4B]/10 transition-all text-center"
+        >
+          <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
+          <div className="bg-[#D96C4B]/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+            {feature.icon}
+          </div>
+          <p className="text-sm text-gray-400/70 backdrop-blur-sm">{feature.description}</p>
+          <div className="mt-6 h-1 w-10 bg-gradient-to-r from-[#D96C4B] to-[#FF9068] rounded-full mx-auto"></div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Programs Section */}
       <section className="py-20 px-4 bg-[#0D0D0D]">

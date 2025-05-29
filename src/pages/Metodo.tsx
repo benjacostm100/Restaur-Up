@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import CasosCarousel from "@/components/CasosCarousel";
 
 // Componente de fase animada
 const AnimatedPhase = ({ fase, title, desc, icon: Icon, index }) => {
@@ -151,65 +152,9 @@ const Metodo = () => {
           </div>
         </div>
       </section>
+      <CasosCarousel />
 
-      {/* Caso de éxito con before/after */}
-      <section className="py-20 px-4 bg-gradient-to-r from-gray-950/90 via-gray-950 to-orange-950">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-[#D96C4B] font-semibold tracking-wider">RESULTADOS MEDIBLES</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-4 text-white">De la teoría a la práctica</h2>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-2xl font-bold mb-6 text-white">Caso de éxito: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D96C4B] to-orange-500">Restaurante La Tradición</span></h3>
-              <p className="text-gray-400 mb-8">
-                En solo 3 meses aplicando nuestro método, lograron:
-              </p>
-              <ul className="space-y-4">
-                {[
-                  { metric: "+35%", text: "de rentabilidad" },
-                  { metric: "-20%", text: "en costos operativos" },
-                  { metric: "+50%", text: "de eficiencia en cocina" },
-                  { metric: "+40%", text: "en satisfacción del cliente" }
-                ].map((item, index) => (
-                  <motion.li 
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="flex items-start text-white"
-                  >
-                    <CheckCircle className="text-[#D96C4B] mt-1 mr-3 flex-shrink-0" />
-                    <span><strong className="text-xl">{item.metric}</strong> {item.text}</span>
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
-            
-            <motion.div 
-              className="relative h-96 bg-gray-800 rounded-xl overflow-hidden shadow-2xl"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <img 
-                src="https://images.unsplash.com/photo-1599054228863-88e0b902a32f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                alt="Antes y después" 
-                className="absolute inset-0 w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70"></div>
-              <div className="relative z-10 p-8 text-white h-full flex flex-col justify-end">
-                <h4 className="text-2xl font-bold mb-2">Transformación real</h4>
-                <p className="text-gray-300">De la desorganización a la excelencia operativa</p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Cierre Inspirador */}
       <section className="relative py-32 px-4 text-center overflow-hidden bg-gradient-to-b from-black/90 to-black">
