@@ -38,54 +38,61 @@ const Programa = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        {/* Background Video */}
-        <div className="absolute inset-0 z-0 bg-black ">
-      
-      <div className="absolute inset-0 bg-gradient-to-r from-[#D96C4B]/20 to-transparent"></div>
-        </div>
+        <section className="relative overflow-hidden">
+          {/* Imagen de fondo */}
+          <img
+            src="/imagenes/pro2.jpg"
+            alt="Fondo Hero"
+            className="absolute inset-0 w-full h-full object-cover object-center z-0"
+          />
 
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={container}
-          className="relative z-10 pt-40 pb-32 px-4 max-w-6xl mx-auto text-center"
-        >
-          <motion.h1 
-            className="text-4xl md:text-6xl font-bold text-white mb-6"
-            variants={item}
+          {/* Overlay negro + degradado */}
+          <div className="absolute inset-0 z-0 bg-black/70">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#D96C4B]/10 to-transparent"></div>
+          </div>
+
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={container}
+            className="relative z-10 pt-40 pb-32 px-4 max-w-6xl mx-auto text-center"
           >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF9068] to-[#D96C4B]">
-              Programa RestaurUP
-            </span>
-          </motion.h1>
-          
-          <motion.p 
-            className="text-xl text-gray-300 max-w-3xl mx-auto mb-10"
-            variants={item}
-          >
-            Transformación estratégica para restaurantes que quieren <span className="text-[#D96C4B] font-semibold">resultados reales</span>, no solo teoría
-          </motion.p>
-          
-          <motion.div variants={item}>
-            <Button 
-              asChild
-              variant="link"
-              className="group text-[#D96C4B] hover:text-white"
+            <motion.h1 
+              className="text-4xl md:text-6xl font-bold text-white mb-6"
+              variants={item}
             >
-              <Link to="/metodo" className="flex items-center">
-                <span className="bg-gradient-to-r from-[#D96C4B] to-[#E2845A] bg-clip-text text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all">
-                  Contactanos!
-                </span>
-                <span className="ml-2 group-hover:translate-x-2 transition-transform">
-                  <ArrowRight className="text-[#D96C4B] group-hover:text-white" />
-                </span>
-              </Link>
-            </Button>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF9068] to-[#D96C4B]">
+                Programa RestaurUP
+              </span>
+            </motion.h1>
+            
+            <motion.p 
+              className="text-xl text-gray-300 max-w-3xl mx-auto mb-10"
+              variants={item}
+            >
+              Transformación estratégica para restaurantes que quieren <span className="text-[#D96C4B] font-semibold">resultados reales</span>, no solo teoría
+            </motion.p>
+            
+            <motion.div variants={item}>
+              <Button 
+                asChild
+                variant="link"
+                className="group text-[#D96C4B] hover:text-white"
+              >
+                <Link to="/metodo" className="flex items-center">
+                  <span className="bg-gradient-to-r from-[#D96C4B] to-[#E2845A] bg-clip-text text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all">
+                    Contactanos!
+                  </span>
+                  <span className="ml-2 group-hover:translate-x-2 transition-transform">
+                    <ArrowRight className="text-[#D96C4B] group-hover:text-white" />
+                  </span>
+                </Link>
+              </Button>
+            </motion.div>
           </motion.div>
-        </motion.div>
-      </section>
+        </section>
+
 
       {/* Differentiator Section */}
 <section className="relative py-24 px-4 bg-gradient-to-b from-black to-[#1A1A1A] overflow-hidden">
@@ -315,36 +322,49 @@ const Programa = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-[#1A1A1A] to-black">
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeIn}
-          className="max-w-4xl mx-auto text-center bg-[#0D0D0D] p-12 rounded-2xl border border-gray-800 relative overflow-hidden"
-        >
-          <div className="absolute -right-20 -top-20 w-64 h-64 bg-[#D96C4B]/10 rounded-full blur-xl"></div>
-          <div className="absolute -left-20 -bottom-20 w-64 h-64 bg-[#D96C4B]/5 rounded-full blur-xl"></div>
-          
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">¿Listo para transformar tu restaurante?</h2>
-          <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">Agenda una consulta gratuita para analizar tus desafíos específicos</p>
-          
-          <Button 
-            asChild
-            size="lg"
-            className="bg-gradient-to-r from-[#D96C4B] to-[#FF9068] text-white px-10 py-6 text-lg group"
-          >
-            <Link to="/contacto">
-              Solicitar diagnóstico gratuito
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </Button>
+        <section className="py-20 px-4 bg-gradient-to-br from-[#1A1A1A] to-black relative overflow-hidden">
+          {/* Imagen de fondo */}
+          <img
+            src="/imagenes/pro3.jpg"
+            alt="Fondo CTA"
+            className="absolute inset-0 w-full h-full object-cover object-center z-0"
+          />
 
-          <p className="text-gray-500 text-sm mt-6">
-            Garantía: Si no ves mejoras en 3 meses, seguimos trabajando contigo sin coste adicional.
-          </p>
-        </motion.div>
-      </section>
+          {/* Overlay negro */}
+          <div className="absolute inset-0 bg-black opacity-60 z-0"></div>
+
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            className="max-w-4xl mx-auto text-center bg-[#0D0D0D]/90 p-12 rounded-2xl border border-gray-800 relative z-10"
+          >
+            <div className="absolute -right-20 -top-20 w-64 h-64 bg-[#D96C4B]/10 rounded-full blur-xl"></div>
+            <div className="absolute -left-20 -bottom-20 w-64 h-64 bg-[#D96C4B]/5 rounded-full blur-xl"></div>
+
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">¿Listo para transformar tu restaurante?</h2>
+            <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
+              Agenda una consulta gratuita para analizar tus desafíos específicos
+            </p>
+
+            <Button 
+              asChild
+              size="lg"
+              className="bg-gradient-to-r from-[#D96C4B] to-[#FF9068] text-white px-10 py-6 text-lg group"
+            >
+              <Link to="/contacto">
+                Solicitar diagnóstico gratuito
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+
+            <p className="text-gray-500 text-sm mt-6">
+              Garantía: Si no ves mejoras en 3 meses, seguimos trabajando contigo sin coste adicional.
+            </p>
+          </motion.div>
+        </section>
+
     </Layout>
   );
 };
