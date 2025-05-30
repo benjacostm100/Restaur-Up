@@ -85,7 +85,7 @@ const ProblemSolution = () => {
               variant="outline"
               className="border-[#D96C4B] bg-[#D96C4B]/10 text-[#D96C4B] hover:bg-white/10 hover:text-[#D96C4B]"
             >
-              <Link to="/problemas-comunes">
+              <Link to="/programa">
                 Ver problemas comunes en restaurantes
               </Link>
             </Button>
@@ -166,7 +166,7 @@ const ProblemSolution = () => {
               asChild
               className="bg-[#D96C4B] hover:bg-[#D96C4B]/90 text-white px-8 py-6 text-lg"
             >
-              <Link to="/contacto">
+              <Link to="https://wa.me/34605623970">
                 Quiero transformar mi restaurante
               </Link>
             </Button>

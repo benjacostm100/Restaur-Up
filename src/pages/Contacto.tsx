@@ -67,17 +67,17 @@ const Contacto = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "info@restaurup.com"
+      content: "hola@restaurup.com.com"
     },
     {
       icon: Phone,
       title: "Teléfono",
-      content: "+34 900 123 456"
+      content: "+34 605 623 970"
     },
     {
       icon: MessageCircle,
       title: "WhatsApp",
-      content: "+34 600 123 456"
+      content: "+34 605 623 970"
     },
     {
       icon: MapPin,

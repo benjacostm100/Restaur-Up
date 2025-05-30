@@ -164,7 +164,7 @@ const Resultados = () => {
               size="lg"
               className="relative overflow-hidden group bg-gradient-to-r from-[#D96C4B] to-orange-600 hover:from-[#D96C4B]/90 hover:to-orange-600/90 text-white shadow-lg hover:shadow-xl transition-all"
             >
-              <Link to="/contacto" className="flex items-center">
+              <Link to="/solicitar-diagnostico" className="flex items-center">
                 <span>Solicita tu diagnóstico gratuito</span>
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>

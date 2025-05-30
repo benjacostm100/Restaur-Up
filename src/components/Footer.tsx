@@ -91,8 +91,8 @@ export default function Footer() {
   ];
 
   const contactItems = [
-    { icon: Mail, text: "info@restaurup.com", href: "mailto:info@restaurup.com" },
-    { icon: Phone, text: "+34 900 123 456", href: "tel:+34900123456" },
+    { icon: Mail, text: "hola@restaurup.com", href: "mailto:hola@restaurup.com" },
+    { icon: Phone, text: "+34 605 623 970", href: "tel:+34 605 623 970" },
     { icon: MapPin, text: "Calle Ejemplo 123, Madrid", href: "#" },
     { icon: Globe, text: "www.restaurup.com", href: "https://www.restaurup.com" },
   ];
@@ -100,7 +100,7 @@ export default function Footer() {
   const socialLinks = [
     { icon: Facebook, href: "https://facebook.com" },
     { icon: Instagram, href: "https://instagram.com" },
-    { icon: MessageCircle, href: "https://wa.me/34900123456" },
+    { icon: MessageCircle, href: "https://wa.me/34605623970" },
   ];
 
   return (

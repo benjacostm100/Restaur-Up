@@ -80,7 +80,7 @@ const Programa = () => {
                 variant="link"
                 className="group text-[#D96C4B] hover:text-white"
               >
-                <Link to="/metodo" className="flex items-center">
+                <Link to="https://wa.me/34605623970" className="flex items-center">
                   <span className="bg-gradient-to-r from-[#D96C4B] to-[#E2845A] bg-clip-text text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all">
                     Contactanos!
                   </span>
@@ -353,7 +353,7 @@ const Programa = () => {
               size="lg"
               className="bg-gradient-to-r from-[#D96C4B] to-[#FF9068] text-white px-10 py-6 text-lg group"
             >
-              <Link to="/contacto">
+              <Link to="/solicitar-diagnostico">
                 Solicitar diagnóstico gratuito
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
