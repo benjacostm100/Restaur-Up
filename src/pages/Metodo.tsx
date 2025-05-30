@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import CasosCarousel from "@/components/CasosCarousel";
 
+
 // Componente de fase animada
 const AnimatedPhase = ({ fase, title, desc, icon: Icon, index }) => {
   const [ref, inView] = useInView({
@@ -43,9 +44,15 @@ const Metodo = () => {
     <Layout>
       {/* Hero: El Método con fondo oscuro */}
       <section className="relative pt-40 pb-32 px-4 text-center overflow-hidden bg-gradient-to-b from-black/95 to-black">
-        <div className="absolute inset-0 z-0 opacity-40">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551529834-525807d6b4f3?q=80&w=2031&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center opacity-60"></div>
+       <div className="absolute inset-0 z-0 opacity-40">
+          <img
+            src="/imagenes/met2.avif"
+            alt="Fondo"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black opacity-60"></div>
         </div>
+
         
         <motion.div 
           ref={ref}
@@ -158,9 +165,15 @@ const Metodo = () => {
 
       {/* Cierre Inspirador */}
       <section className="relative py-32 px-4 text-center overflow-hidden bg-gradient-to-b from-black/90 to-black">
-        <div className="absolute inset-0 z-0 opacity-30 ">
-          <div className="absolute inset-0 bg-[url('imagenes/metodo.avif')] bg-cover bg-center opacity-40"></div>
+        <div className="absolute inset-0 z-0 opacity-30">
+          <img
+            src="/imagenes/metodo.avif"
+            alt="Fondo"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black opacity-40"></div>
         </div>
+
         
         <div className="relative z-10 max-w-4xl mx-auto">
           <motion.h2 
