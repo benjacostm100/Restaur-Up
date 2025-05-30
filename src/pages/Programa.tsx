@@ -324,14 +324,14 @@ const Programa = () => {
       {/* CTA Section */}
         <section className="py-20 px-4 bg-gradient-to-br from-[#1A1A1A] to-black relative overflow-hidden">
           {/* Imagen de fondo */}
+          <div className="absolute inset-0 z-0 opacity-40">
           <img
-            src="/imagenes/pro3.jpg"
-            alt="Fondo CTA"
-            className="absolute inset-0 w-full h-full object-cover object-center z-0"
+            src="/imagenes/pro2.jpg"
+            alt="Fondo"
+            className="w-full h-full object-cover object-center"
           />
-
-          {/* Overlay negro */}
-          <div className="absolute inset-0 bg-black opacity-60 z-0"></div>
+          <div className="absolute inset-0 bg-black opacity-60"></div>
+        </div>
 
           <motion.div 
             initial="hidden"

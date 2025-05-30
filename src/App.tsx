@@ -14,6 +14,9 @@ import Contacto from "./pages/Contacto";
 import SolicitarDiagnostico from "./pages/SolicitarDiagnostico";
 import NotFound from "./pages/NotFound";
 import { motion } from "framer-motion";
+import PoliticaPrivacidad from "./pages/PoliticiaPrivacidad";
+import AvisoLegal from "./pages/AvisoLegal";
+import TerminosCondiciones from "./pages/TerminosCondiciones";
 
 const queryClient = new QueryClient();
 
@@ -21,16 +24,11 @@ const App = () => {
   const [mostrarBanner, setMostrarBanner] = useState(false);
 
   useEffect(() => {
-    // Forzar mostrar siempre el banner en desarrollo/prueba
-    setMostrarBanner(true);
 
-    // Código original para respetar la cookie cuando termine la prueba:
-    /*
     const consent = Cookies.get("userConsent");
     if (!consent) {
       setMostrarBanner(true);
     }
-    */
   }, []);
 
   const aceptarCookies = () => {
@@ -53,6 +51,9 @@ const App = () => {
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/solicitar-diagnostico" element={<SolicitarDiagnostico />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
+            <Route path="/aviso-legal" element={<AvisoLegal />} />
+            <Route path="/terminos-condiciones" element={<TerminosCondiciones />} />
           </Routes>
 
           {mostrarBanner && (

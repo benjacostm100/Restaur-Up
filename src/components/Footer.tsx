@@ -85,9 +85,9 @@ export default function Footer() {
   });
 
   const legalLinks = [
-    { name: "Política de Privacidad", href: "#" },
-    { name: "Términos y Condiciones", href: "#" },
-    { name: "Aviso Legal", href: "#" },
+    { name: "Política de Privacidad", href: "/politica-privacidad" },
+    { name: "Términos y Condiciones", href: "terminos-condiciones" },
+    { name: "Aviso Legal", href: "aviso-legal" },
   ];
 
   const contactItems = [
