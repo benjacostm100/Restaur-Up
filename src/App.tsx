@@ -50,10 +50,11 @@ const App = () => {
             <Route path="/resultados" element={<Resultados />} />
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/solicitar-diagnostico" element={<SolicitarDiagnostico />} />
-            <Route path="*" element={<NotFound />} />
             <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
             <Route path="/aviso-legal" element={<AvisoLegal />} />
             <Route path="/terminos-condiciones" element={<TerminosCondiciones />} />
+            <Route path="*" element={<NotFound />} />
+    
           </Routes>
 
           {mostrarBanner && (

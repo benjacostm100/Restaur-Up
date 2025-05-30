@@ -38,7 +38,7 @@ const Programa = () => {
   return (
     <Layout>
       {/* Hero Section */}
-        <section className="relative overflow-hidden">
+        <section className="relative overflow-hidden bg-black">
           {/* Imagen de fondo */}
           <img
             src="/imagenes/pro2.jpg"
