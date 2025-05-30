@@ -219,7 +219,7 @@ const Metodo = () => {
               variant="outline"
               className="text-black border-white hover:bg-white/10 hover:text-white px-8"
             >
-              <Link to="/casos-de-exito" className="flex items-center">
+              <Link to="/resultados" className="flex items-center">
                 Ver más casos de éxito <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>

@@ -20,70 +20,89 @@ const ProblemSolution = () => {
     { icon: CheckCircle, text: "Resultados desde el primer mes" },
   ];
 
-  const containerVariants = {
+  const itemVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.3
+        delayChildren: 0.2
       }
     }
   };
 
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+  const cardVariants = {
+    hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut"
+        ease: [0.16, 0.77, 0.47, 0.97]
+      }
+    },
+    hover: {
+      y: -8,
+      boxShadow: "0 10px 30px -5px rgba(217, 108, 75, 0.3)"
+    }
+  };
+
+  const titleVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6
       }
     }
   };
 
   return (
-    <section className="bg-gradient-to-b from-black via-gray-950 to-gray-900 text-white py-20 px-6">
-      <div className="max-w-6xl mx-auto space-y-20">
-        {/* El Problema */}
+    <section className="bg-gray-950 text-white py-20 px-4">
+      <div className="max-w-6xl mx-auto space-y-16">
+        {/* Problemas Section */}
         <motion.div 
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
+          variants={itemVariants}
+          className="text-center"
         >
           <motion.h2 
-            className="text-4xl font-bold text-[#D96C4B] text-center mb-12"
-            variants={itemVariants}
+            className="text-4xl font-bold text-[#D96C4B] mb-12"
+            variants={titleVariants}
           >
             ¿Te suena esto?
           </motion.h2>
           
           <div className="grid md:grid-cols-3 gap-6">
-            {problems.map((item, index) => (
-              <motion.div 
-                key={index} 
-                className="flex items-start gap-4 bg-[#1A1A1A] p-6 rounded-xl border border-gray-800 hover:border-[#D96C4B]/50 transition-all"
-                variants={itemVariants}
-                whileHover={{ y: -5 }}
-              >
-                <div className="p-2 bg-[#D96C4B]/10 rounded-full">
-                  <item.icon className="text-[#D96C4B]" size={24} />
-                </div>
-                <p className="text-gray-300">{item.text}</p>
-              </motion.div>
-            ))}
-          </div>
+  {problems.map((item, index) => (
+    <motion.div 
+      key={index} 
+      className="flex flex-col items-center p-8 bg-gradient-to-br from-gray-500/60 via-gray-700/50 to-gray-600/50 backdrop-blur-md rounded-2xl border border-gray-600/50 hover:border-[#D96C4B]/50 shadow-lg transition-all h-full"
+      variants={cardVariants}
+      whileHover="hover"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
+      <div className="p-3 bg-[#D96C4B]/20 rounded-xl mb-4">
+        <item.icon className="text-[#D96C4B]" size={28} />
+      </div>
+      <p className="text-lg text-gray-200 text-center font-medium">{item.text}</p>
+    </motion.div>
+  ))}
+</div>
+
 
           <motion.div 
-            className="text-center mt-12"
-            variants={itemVariants}
+            className="mt-12"
+            variants={titleVariants}
           >
             <Button 
               asChild
-              variant="outline"
-              className="border-[#D96C4B] bg-[#D96C4B]/10 text-[#D96C4B] hover:bg-white/10 hover:text-[#D96C4B]"
+              className="bg-[#D96C4B] hover:bg-[#D96C4B]/90 text-white px-8 py-5 text-md font-semibold rounded-lg hover:shadow-md hover:shadow-[#D96C4B]/20"
             >
               <Link to="/programa">
                 Ver problemas comunes en restaurantes
@@ -97,7 +116,7 @@ const ProblemSolution = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
+          variants={itemVariants}
           className="pt-16"
         >
           <motion.div 
@@ -141,30 +160,33 @@ const ProblemSolution = () => {
 
           <motion.div 
             className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto"
-            variants={containerVariants}
+            variants={itemVariants}
           >
             {pillars.map((item, index) => (
               <motion.div 
                 key={index} 
-                className="flex items-center gap-4 bg-[#1A1A1A] p-6 rounded-xl border border-gray-800 hover:border-[#D96C4B]/50 transition-all"
-                variants={itemVariants}
-                whileHover={{ scale: 1.02 }}
+                className="flex items-center gap-5 bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-[#D96C4B]/50 transition-all"
+                variants={cardVariants}
+                whileHover="hover"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
               >
-                <div className="p-3 bg-[#D96C4B]/10 rounded-full">
+                <div className="p-3 bg-[#D96C4B]/10 rounded-xl">
                   <item.icon className="text-[#D96C4B]" size={28} />
                 </div>
-                <p className="text-gray-300 font-medium">{item.text}</p>
+                <p className="text-lg text-gray-200 font-medium">{item.text}</p>
               </motion.div>
             ))}
           </motion.div>
 
           <motion.div 
-            className="text-center mt-12"
-            variants={itemVariants}
+            className="text-center mt-16"
+            variants={titleVariants}
           >
             <Button 
               asChild
-              className="bg-[#D96C4B] hover:bg-[#D96C4B]/90 text-white px-8 py-6 text-lg"
+              className="bg-[#D96C4B] hover:bg-[#D96C4B]/90 text-white px-10 py-6 text-lg font-semibold rounded-lg hover:shadow-lg hover:shadow-[#D96C4B]/20"
             >
               <Link to="https://wa.me/34605623970">
                 Quiero transformar mi restaurante

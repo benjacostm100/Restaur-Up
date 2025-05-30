@@ -40,7 +40,7 @@ const Resultados = () => {
 
   const results = [
     {
-      title: "-18% en costes operativos",
+      title: "-20% en costes operativos",
       desc: "Hotel 4* en la Costa Brava. Sin reducir plantilla.",
     },
     {
@@ -84,7 +84,7 @@ const Resultados = () => {
               Resultados Reales con RestaurUP
             </h1>
             <p className="text-xl text-white dark:text-gray-300 max-w-3xl mx-auto">
-              Casos reales de establecimientos que han transformado sus números
+              Un camino claro y estructurado para transformar tu restaurante
             </p>
           </motion.div>
 

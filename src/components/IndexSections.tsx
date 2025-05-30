@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Contacto from './../pages/Contacto';
+import ProgramaCompact from "./ProgramaCompact";
+import Programa from "@/pages/Programa";
+import ProgramasHome from "./ProgramaHome";
 
 const IndexSections = () => {
   const fases = [
@@ -19,18 +22,7 @@ const IndexSections = () => {
     { icon: Settings, text: "Procesos Estandarizados" },
   ];
 
-  const programas = [
-    {
-      icon: Wrench,
-      title: "Autogestión",
-      desc: "Herramientas para implementar mejoras por tu cuenta",
-    },
-    {
-      icon: UserCheck,
-      title: "Asesoría Completa",
-      desc: "Nuestro equipo ejecuta las mejoras por ti",
-    },
-  ];
+  
 
   const container = {
     hidden: { opacity: 0 },
@@ -126,7 +118,7 @@ const IndexSections = () => {
       </div>
 
       {/* Contenido principal */}
-      <div className="relative z-10 max-w-6xl mx-auto space-y-20">
+      <div className="relative z-10 max-w-7xl mx-auto space-y-20">
         {/* Sección Método */}
         <motion.div 
           initial="hidden"
@@ -246,58 +238,7 @@ const IndexSections = () => {
         </motion.div>
 
         {/* Sección Programas */}
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={container}
-          className="text-center space-y-12"
-        >
-          <motion.div variants={item}>
-            <h2 className="text-4xl md:text-5xl font-bold text-white">
-              Nuestros <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D96C4B] to-[#E2845A]">programas</span>
-            </h2>
-            <p className="text-gray-400 mt-4 max-w-xl mx-auto text-lg">
-              Elige el formato que mejor se adapte a tus necesidades
-            </p>
-          </motion.div>
-
-          <motion.div 
-            className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"
-            variants={container}
-          >
-            {programas.map((program, index) => (
-              <motion.div
-                key={index}
-                variants={item}
-                whileHover={{ y: -5 }}
-                className="group relative bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-xl border border-gray-700 hover:border-[#D96C4B]/50 transition-all overflow-hidden"
-              >
-                {/* Efecto de borde animado */}
-                <div className="absolute inset-0 rounded-xl overflow-hidden">
-                  <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#D96C4B]/30 transition-all duration-500 rounded-xl"></div>
-                </div>
-                
-                <div className="flex items-center gap-5">
-                  <div className="p-4 bg-gradient-to-br from-[#D96C4B] to-[#E2845A] rounded-xl shadow-lg flex-shrink-0">
-                    <program.icon className="text-white" size={28} />
-                  </div>
-                  <h3 className="text-xl font-bold text-white">{program.title}</h3>
-                </div>
-                <p className="mt-4 text-gray-400">{program.desc}</p>
-                <Button 
-                  asChild
-                  size="sm"
-                  className="mt-6 bg-gradient-to-r from-[#D96C4B] to-[#E2845A] hover:from-[#D96C4B]/90 hover:to-[#E2845A]/90 text-white shadow-lg hover:shadow-[#D96C4B]/30 z-0"
-                >
-                  <Link to={`/Contacto-${program.title.toLowerCase()}`}>
-                    Saber más
-                  </Link>
-                </Button>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
+       <ProgramasHome/>
       </div>
     </section>
   );

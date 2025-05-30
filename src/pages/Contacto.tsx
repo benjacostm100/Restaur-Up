@@ -82,7 +82,7 @@ const Contacto = () => {
     {
       icon: MapPin,
       title: "Dirección",
-      content: "Calle Restauración, 123\n28001 Madrid, España"
+      content: "www.restaurup.com"
     }
   ];
 

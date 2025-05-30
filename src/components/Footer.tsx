@@ -93,14 +93,7 @@ export default function Footer() {
   const contactItems = [
     { icon: Mail, text: "hola@restaurup.com", href: "mailto:hola@restaurup.com" },
     { icon: Phone, text: "+34 605 623 970", href: "tel:+34 605 623 970" },
-    { icon: MapPin, text: "Calle Ejemplo 123, Madrid", href: "#" },
     { icon: Globe, text: "www.restaurup.com", href: "https://www.restaurup.com" },
-  ];
-
-  const socialLinks = [
-    { icon: Facebook, href: "https://facebook.com" },
-    { icon: Instagram, href: "https://instagram.com" },
-    { icon: MessageCircle, href: "https://wa.me/34605623970" },
   ];
 
   return (
@@ -139,23 +132,6 @@ export default function Footer() {
           </p>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.4 }} className="flex space-x-4">
-          {socialLinks.map((social, index) => (
-            <motion.a
-              key={index}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              ref={ref}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gray-200 hover:bg-[#D96C4B] text-gray-600 hover:text-white p-3 rounded-full transition-all"
-            >
-              <social.icon size={20} />
-            </motion.a>
-          ))}
-        </motion.div>
       </div>
 
       {/* Contacto */}
