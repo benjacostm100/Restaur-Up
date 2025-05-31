@@ -125,7 +125,7 @@ const Modulos = () => {
         "Mayor control sobre gastos operativos",
         "Mejores condiciones con proveedores"
       ],
-      image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      image: "imagenes/operat.avif"
     },
     {
       title: "Revenue Management",
@@ -142,7 +142,7 @@ const Modulos = () => {
         "Mejor gestión de la capacidad",
         "Clientes más satisfechos"
       ],
-      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      image: "imagenes/pro.jpg"
     },
     {
       title: "Optimización de Procesos",
@@ -159,7 +159,7 @@ const Modulos = () => {
         "Equipo más autónomo y eficiente",
         "Experiencia del cliente consistente"
       ],
-      image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+      image: "imagenes/metodo.avif"
     }
   ];
 
