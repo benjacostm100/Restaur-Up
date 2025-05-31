@@ -2,6 +2,7 @@ import { CheckCircle, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { openWhatsApp } from "@/lib/utils";
 
 const CtaFinal = () => {
   const estoEsParaTi = [
@@ -127,8 +128,8 @@ const CtaFinal = () => {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <Link to = "https://wa.me/34605623970">
-            <Button
+            
+            <Button onClick={openWhatsApp}
               className="relative overflow-hidden isolate border-none bg-transparent text-white transition-all duration-500 group px-10 py-6 rounded-sm"
             >
               {/* Fondo con efecto glassmorphism y blur */}
@@ -154,7 +155,7 @@ const CtaFinal = () => {
 
 
             </Button>
-            </Link>
+
           </motion.div>
         </motion.div>
       </div>

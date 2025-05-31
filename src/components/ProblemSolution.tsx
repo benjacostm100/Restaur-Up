@@ -2,6 +2,7 @@ import { CheckCircle, AlertTriangle, Flame, Clock, DollarSign, Users } from "luc
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { openWhatsApp } from "@/lib/utils";
 
 const ProblemSolution = () => {
   const problems = [
@@ -165,38 +166,45 @@ const ProblemSolution = () => {
           </motion.div>
 
           <motion.div 
-            className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto"
-            variants={itemVariants}
-          >
-            {pillars.map((item, index) => (
-              <motion.div 
-                key={index} 
-                className="flex items-center gap-5 bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-[#D96C4B]/50 transition-all"
-                variants={cardVariants}
-                whileHover="hover"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-              >
-                <div className="p-3 bg-[#D96C4B]/10 rounded-xl">
-                  <item.icon className="text-[#D96C4B]" size={28} />
-                </div>
-                <p className="text-lg text-gray-200 font-medium">{item.text}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+  className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto"
+  variants={itemVariants}
+>
+  {pillars.map((item, index) => (
+    <motion.div 
+      key={index} 
+      className="relative overflow-hidden flex items-center gap-5 bg-gray-900 hover:bg-gray-800 p-8 rounded-2xl border border-green-600/20 hover:border-[#D96C4B]/50 transition-all"
+      variants={cardVariants}
+      whileHover="hover"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
+      {/* Fondo de textura */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-10 pointer-events-none rounded-2xl"
+        style={{ backgroundImage: "url('/imagenes/textura1.avif')" }}
+      ></div>
+
+      {/* Contenido */}
+      <div className="relative p-3 bg-green-50/10 rounded-xl">
+        <item.icon className="text-green-600" size={28} />
+      </div>
+      <p className="relative text-lg text-gray-200 font-medium">{item.text}</p>
+    </motion.div>
+  ))}
+</motion.div>
 
           <motion.div 
             className="text-center mt-16"
             variants={titleVariants}
           >
-            <Button 
+            <Button onClick={openWhatsApp}
               asChild
               className="bg-[#D96C4B] hover:bg-[#D96C4B]/90 text-white px-10 py-6 text-lg font-semibold rounded-lg hover:shadow-lg hover:shadow-[#D96C4B]/20"
             >
-              <Link to="https://wa.me/34605623970">
+
                 Quiero transformar mi restaurante
-              </Link>
+
             </Button>
           </motion.div>
         </motion.div>

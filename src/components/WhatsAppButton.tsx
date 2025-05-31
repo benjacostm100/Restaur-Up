@@ -4,7 +4,7 @@ import { MessageCircle } from "lucide-react";
 const WhatsAppButton = () => {
   const handleWhatsAppClick = () => {
     const phoneNumber = "34605623970"; // Número de teléfono sin el +
-    const message = "Hola, me interesa el programa RestaurUP y me gustaría solicitar mi diagnóstico gratuito.";
+    const message = "Hola, he visto la web de RestaurUP y me interesa mejorar la rentabilidad de mi restaurante. ¿Podéis ayudarme?";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };

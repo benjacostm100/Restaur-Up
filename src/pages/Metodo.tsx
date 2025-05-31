@@ -6,7 +6,7 @@ import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import CasosCarousel from "@/components/CasosCarousel";
-
+import { openWhatsApp } from "@/lib/utils";
 
 // Componente de fase animada
 const AnimatedPhase = ({ fase, title, desc, icon: Icon, index }) => {
@@ -205,13 +205,12 @@ const Metodo = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <Button
-              asChild
+              onClick={openWhatsApp}
               size="lg"
               className="bg-gradient-to-r from-[#D96C4B] to-orange-600 hover:from-[#D96C4B]/90 hover:to-orange-600/90 text-white px-8"
             >
-              <Link to="/contacto" className="flex items-center">
                 Quiero transformar mi restaurante <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+            
             </Button>
             <Button
               asChild

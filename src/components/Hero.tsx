@@ -3,6 +3,7 @@ import { ArrowDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { openWhatsApp } from "@/lib/utils";
 
 const images = [
   "imagenes/hero1.jpg",
@@ -112,14 +113,14 @@ const Hero = () => {
               transition={{ delay: 0.2, duration: 0.5 }}
             >
               <Button
-                asChild
+                onClick={openWhatsApp}
                 size="lg"
                 className= "text-white bg-white/15 backdrop-blur-md hover:text-gray-500 px-5 py-3 text-xs md:text-sm lg:text-base border-transparent"
               >
-                <Link to="https://wa.me/34605623970" className="flex items-center">
+              
                   Empieza a ganar dinero de verdad
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
+                
               </Button>
             </motion.div>
           </div>

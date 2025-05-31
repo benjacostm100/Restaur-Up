@@ -7,6 +7,7 @@ import Layout from "@/components/Layout";
 import Contacto from './Contacto';
 import ProgramsSection from "@/components/ProgramaCompact";
 import ProgramsCompact from "@/components/ProgramaCompact";
+import { openWhatsApp } from "@/lib/utils";
 
 
 const Programa = () => {
@@ -79,18 +80,18 @@ const Programa = () => {
             
             <motion.div variants={item}>
               <Button 
-                asChild
+                onClick={openWhatsApp}
                 variant="link"
                 className="group text-[#D96C4B] hover:text-white"
               >
-                <Link to="https://wa.me/34605623970" className="flex items-center">
+                
                   <span className="bg-gradient-to-r from-[#D96C4B] to-[#E2845A] bg-clip-text text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all">
                     Contactanos!
                   </span>
                   <span className="ml-2 group-hover:translate-x-2 transition-transform">
                     <ArrowRight className="text-[#D96C4B] group-hover:text-white" />
                   </span>
-                </Link>
+            
               </Button>
             </motion.div>
           </motion.div>
