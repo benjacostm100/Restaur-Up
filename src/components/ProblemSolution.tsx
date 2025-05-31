@@ -89,7 +89,10 @@ const ProblemSolution = () => {
       whileInView="visible"
       viewport={{ once: true }}
     >
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1709625862266-014ef072fd93?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDQ3fHx8ZW58MHx8fHx8')] rounded-lg bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 rounded-lg bg-cover bg-center opacity-10"
+        style={{ backgroundImage: "url('/imagenes/textura1.avif')" }}>
+        
+        </div>
       <div className="p-3 bg-[#D96C4B]/60 rounded-xl mb-4">
         <item.icon className="text-gray-900" size={28} />
       </div>
