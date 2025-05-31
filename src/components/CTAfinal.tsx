@@ -46,7 +46,13 @@ const CtaFinal = () => {
   return (
     <section className="relative overflow-hidden bg-[#0D0D0D] py-16 px-6">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgZmlsbD0idXJsKCNwYXR0ZXJuKSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIvPjwvc3ZnPg==')] opacity-20"></div>
+        <div 
+        className="absolute inset-0 bg-cover bg-center opacity-5 pointer-events-none rounded-2xl"
+        style={{ backgroundImage: "url('/imagenes/textura3.avif')" }}
+      >
+         <div className="absolute inset-0 bg-black opacity-70"></div>
+      </div>
+
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -58,7 +64,7 @@ const CtaFinal = () => {
           className="text-center space-y-14"
         >
           <motion.h2 
-            className="text-4xl lg:text-5xl py-2 font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#D96C4B] to-[#FF9068]"
+            className="text-4xl lg:text-5xl py-2 font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#D96C4B] to-orange-500"
             variants={itemVariants}
           >
             ¿Es este tu caso?

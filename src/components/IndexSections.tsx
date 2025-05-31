@@ -118,7 +118,7 @@ const IndexSections = () => {
       </div>
        <div 
         className="absolute inset-0 bg-cover bg-center opacity-5 pointer-events-none rounded-2xl"
-        style={{ backgroundImage: "url('/imagenes/pro.jpg')" }}
+        style={{ backgroundImage: "url('/imagenes/fondo2.jpg')" }}
       ></div>
 
       {/* Contenido principal */}
