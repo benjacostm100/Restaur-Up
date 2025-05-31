@@ -173,7 +173,7 @@ const ProblemSolution = () => {
   {pillars.map((item, index) => (
     <motion.div 
       key={index} 
-      className="relative overflow-hidden flex items-center gap-5 bg-gray-900 hover:bg-gray-800 p-8 rounded-2xl border border-green-600/20 hover:border-[#D96C4B]/50 transition-all"
+      className="relative overflow-hidden flex items-center gap-5 bg-gray-900 hover:bg-gray-800 p-8 rounded-2xl border border-green-600/20 hover:border-green-600/50 transition-all"
       variants={cardVariants}
       whileHover="hover"
       initial="hidden"

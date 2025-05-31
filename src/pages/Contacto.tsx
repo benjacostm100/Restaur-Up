@@ -1,15 +1,11 @@
+// pages/Contacto.tsx
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, MessageCircle, Send } from "lucide-react";
-import { useState, useRef  } from "react";
-import { useToast } from "@/hooks/use-toast";
+import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import HCaptcha from "@hcaptcha/react-hcaptcha";
+import { ContactForm } from "@/components/ContactForm";
 
 const ContactItem = ({ icon: Icon, title, content, delay }) => {
   const [ref, inView] = useInView({
@@ -37,31 +33,10 @@ const ContactItem = ({ icon: Icon, title, content, delay }) => {
 };
 
 const Contacto = () => {
-  const { toast } = useToast();
-  const hcaptchaRef = useRef(null);
-  const [formData, setFormData] = useState({ nombre: "", email: "", mensaje: "" });
-  const [hcaptchaToken, setHcaptchaToken] = useState<string | null>(null);
-
-
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
-
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!hcaptchaToken) {
-      toast({ title: "Verificación requerida", description: "Por favor, completa el captcha antes de enviar el mensaje." });
-      return;
-    }
-
-    // Aquí enviarías los datos a tu backend o emailjs (incluyendo el token si lo necesitas)
-    toast({ title: "¡Mensaje enviado!", description: "Te responderemos pronto a tu consulta." });
-    setFormData({ nombre: "", email: "", mensaje: "" });
-    hcaptchaRef.current?.resetCaptcha();
-    setHcaptchaToken(null);
-  }  
 
   const contactMethods = [
     {
@@ -85,7 +60,6 @@ const Contacto = () => {
       content: "www.restaurup.com"
     }
   ];
-
 
   return (
     <Layout>
@@ -115,13 +89,23 @@ const Contacto = () => {
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Información de contacto */}
+          <div className="flex flex-col lg:flex-row gap-12">
+            {/* Formulario de contacto (primero en móvil) */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
+              initial={{ opacity: 0, y: 50 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-8"
+              className="w-full lg:w-1/2 order-1 lg:order-2"
+            >
+              <ContactForm />
+            </motion.div>
+
+            {/* Información de contacto (segundo en móvil) */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="w-full lg:w-1/2 space-y-8 order-2 lg:order-1"
             >
               <Card className="p-8 bg-gradient-to-br from-[#1A1A1A] to-[#222222] border border-[#333] shadow-2xl">
                 <h3 className="text-2xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#D96C4B] to-orange-500">
@@ -143,7 +127,7 @@ const Contacto = () => {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={inView ? { opacity: 1 } : {}}
-                transition={{ delay: 0.4, duration: 0.8 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
                 className="relative rounded-2xl overflow-hidden h-80 shadow-2xl group"
               >
                 <img 
@@ -158,77 +142,6 @@ const Contacto = () => {
                   </div>
                 </div>
               </motion.div>
-            </motion.div>
-
-            {/* Formulario de consultas generales */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <Card className="p-8 bg-gradient-to-br from-[#1A1A1A] to-[#222222] border border-[#333] shadow-2xl h-full">
-                <h3 className="text-2xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-[#D96C4B] to-orange-500">
-                  Envíanos un mensaje
-                </h3>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <Label htmlFor="nombre" className="text-gray-300 mb-2 block">Nombre *</Label>
-                    <Input 
-                      id="nombre"
-                      value={formData.nombre}
-                      onChange={(e) => setFormData({...formData, nombre: e.target.value})}
-                      required
-                      className="bg-[#2A2A2A] border-[#444] text-white placeholder:text-gray-500 hover:border-[#D96C4B]/50 focus:border-[#D96C4B] focus:ring-[#D96C4B]/20 transition-all"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="email" className="text-gray-300 mb-2 block">Email *</Label>
-                    <Input 
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
-                      required
-                      className="bg-[#2A2A2A] border-[#444] text-white placeholder:text-gray-500 hover:border-[#D96C4B]/50 focus:border-[#D96C4B] focus:ring-[#D96C4B]/20 transition-all"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="mensaje" className="text-gray-300 mb-2 block">Mensaje *</Label>
-                    <Textarea 
-                      id="mensaje"
-                      value={formData.mensaje}
-                      onChange={(e) => setFormData({...formData, mensaje: e.target.value})}
-                      required
-                      className="bg-[#2A2A2A] border-[#444] text-white placeholder:text-gray-500 hover:border-[#D96C4B]/50 focus:border-[#D96C4B] focus:ring-[#D96C4B]/20 transition-all min-h-[150px]"
-                      placeholder="Escribe tu consulta aquí..."
-                    />
-                  </div>
-                   {/* hCaptcha */}
-                    <div>
-                      <HCaptcha
-                        sitekey="f0def1c4-ea12-4f32-8b7c-4b4eee4ad2fe"
-                        onVerify={(token) => setHcaptchaToken(token)}
-                        onExpire={() => setHcaptchaToken(null)}
-                        ref={hcaptchaRef}
-                        theme="dark"
-                      />
-                    </div>
-
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <Button 
-                      type="submit"
-                      size="lg" 
-                      className="w-full bg-gradient-to-r from-[#D96C4B] to-orange-600 hover:from-[#D96C4B]/90 hover:to-orange-600/90 text-white text-lg py-6 shadow-lg hover:shadow-xl transition-all"
-                    >
-                      <Send className="mr-2 h-5 w-5" />
-                      Enviar Mensaje
-                    </Button>
-                  </motion.div>
-                </form>
-              </Card>
             </motion.div>
           </div>
         </div>

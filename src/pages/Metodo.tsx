@@ -17,20 +17,33 @@ const AnimatedPhase = ({ fase, title, desc, icon: Icon, index }) => {
 
   return (
     <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: index * 0.15 }}
-    >
-      <Card className="p-8 text-center border-gray-700 bg-gray-800 hover:border-[#D96C4B] group transition-all h-full shadow-xl hover:shadow-[#D96C4B]/20">
-        <div className="w-16 h-16 bg-gradient-to-br from-[#D96C4B] to-orange-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 transition-all group-hover:scale-110">
-          <Icon size={28} />
-        </div>
-        <span className="text-sm font-semibold text-[#D96C4B]">FASE {fase}</span>
-        <h3 className="text-xl font-bold mb-3 mt-2 text-white">{title}</h3>
-        <p className="text-gray-400">{desc}</p>
-      </Card>
-    </motion.div>
+  ref={ref}
+  initial={{ opacity: 0, y: 20 }}
+  animate={inView ? { opacity: 1, y: 0 } : {}}
+  transition={{ duration: 0.5, delay: index * 0.15 }}
+>
+  <Card className="relative p-8 text-center border-gray-700 bg-gray-800 hover:border-[#D96C4B] group transition-all h-full shadow-xl hover:shadow-[#D96C4B]/20 overflow-hidden rounded-2xl">
+    
+    {/* Fondo de textura con overlay */}
+    <div
+      className="absolute inset-0 bg-cover bg-center opacity-20 pointer-events-none"
+      style={{ backgroundImage: "url('/imagenes/textura2.avif')" }}
+    />
+    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to- bg-gray-700/50 pointer-events-none" />
+    
+    {/* Contenido */}
+    <div className="relative z-10">
+      <div className="w-16 h-16 bg-gradient-to-br from-[#D96C4B] to-orange-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 transition-all group-hover:scale-110">
+        <Icon size={28} />
+      </div>
+
+      <span className="text-sm font-semibold text-[#D96C4B]">FASE {fase}</span>
+      <h3 className="text-xl font-bold mb-3 mt-2 text-white">{title}</h3>
+      <p className="text-gray-400">{desc}</p>
+    </div>
+  </Card>
+</motion.div>
+
   );
 };
 
@@ -139,6 +152,7 @@ const Metodo = () => {
             ].map((fase, index) => (
               <AnimatedPhase key={index} index={index} {...fase} />
             ))}
+            
           </div>
 
           <div className="text-center mt-16">
