@@ -170,7 +170,7 @@ const Modulos = () => {
         <section className="relative pt-32 pb-20 px-4 overflow-hidden">
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-b from-gray-900/90 to-gray-900 z-10"></div>
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-30"></div>
+            <div className="absolute inset-0 bg-[url('imagenes/pro.jpg')] bg-cover bg-center opacity-60"></div>
           </div>
           
           <div className="max-w-7xl mx-auto relative z-20">
@@ -182,7 +182,7 @@ const Modulos = () => {
               className="text-center mb-16"
             >
               <motion.span 
-                className="inline-block bg-orange-500/10 text-orange-400 px-4 py-2 rounded-full text-sm font-semibold mb-6"
+                className="inline-block bg-orange-500/10 text-[#D96C4B] px-4 py-2 rounded-full text-sm font-semibold mb-6"
                 initial={{ scale: 0.9 }}
                 animate={inView ? { scale: 1 } : {}}
                 transition={{ delay: 0.2, type: "spring" }}
@@ -195,7 +195,7 @@ const Modulos = () => {
                 animate={inView ? { opacity: 1 } : {}}
                 transition={{ delay: 0.4 }}
               >
-                Transforma tu <span className="bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent">restaurante</span>
+                Transforma tu <span className="bg-gradient-to-r from-[#D96C4B] to-orange-500 bg-clip-text text-transparent">restaurante</span>
               </motion.h1>
               <motion.p
                 className="text-xl text-gray-300 max-w-3xl mx-auto"

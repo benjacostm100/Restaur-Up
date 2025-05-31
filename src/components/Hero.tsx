@@ -57,7 +57,7 @@ const Hero = () => {
 
 
   return (
-    <section className="relative h-[90vh] bg-black sm:h-screen w-full overflow-hidden flex items-center justify-center pt-36 sm:pt-44 md:pt-48 pb-16">
+    <section className="relative h-[100vh] bg-black sm:h-[100vh] w-full overflow-hidden flex items-center justify-center pt-36 sm:pt-44 md:pt-48 pb-16">
       {/* Fondo de respaldo */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-950"></div>
 
@@ -87,7 +87,7 @@ const Hero = () => {
           transition={{ delay: 0.3, duration: 0.8 }}
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-snug sm:leading-tight mb-4 sm:mb-5 md:mb-6">
-            <span className="inline-block mb-3">Tienes un buen restaurante</span>
+            <span className="inline-block sm:mb-2">Tienes un buen restaurante</span>
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D96C4B] to-orange-500">
               Pero no un buen negocio
@@ -95,7 +95,7 @@ const Hero = () => {
           </h1>
 
           <motion.p 
-            className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 sm:mb-10 md:mb-12 max-w-xs md:max-w-xl lg:max-w-2xl mx-auto"
+            className="text-base md:text-xl lg:text-2xl text-gray-300 mb-8 sm:mb-10 md:mb-12 max-w-xs md:max-w-xl lg:max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
