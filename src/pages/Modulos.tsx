@@ -108,7 +108,7 @@ const Modulos = () => {
         "Optimización del inventario",
         "Reducción de desperdicios"
       ],
-      image: "https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      image: "imagenes/food.avif"
     },
     {
       title: "Costes Operativos",
@@ -170,7 +170,7 @@ const Modulos = () => {
         <section className="relative pt-32 pb-20 px-4 overflow-hidden">
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-b from-gray-900/90 to-gray-900 z-10"></div>
-            <div className="absolute inset-0 bg-[url('imagenes/pro.jpg')] bg-cover bg-center opacity-60"></div>
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-60"></div>
           </div>
           
           <div className="max-w-7xl mx-auto relative z-20">
