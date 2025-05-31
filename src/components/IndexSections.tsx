@@ -48,7 +48,7 @@ const IndexSections = () => {
   };
 
   return (
-    <section className="relative bg-gradient-to-b from-gray-950/80 via-gray-950 to-gray-900/80 overflow-hidden py-24 px-4">
+    <section className="relative bg-gradient-to-b from-gray-950/90 via-gray-950 to-gray-900 overflow-hidden py-24 px-4">
 
       {/* 🌌 Efectos de fondo modernos */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -116,6 +116,10 @@ const IndexSections = () => {
           </defs>
         </svg>
       </div>
+       <div 
+        className="absolute inset-0 bg-cover bg-center opacity-5 pointer-events-none rounded-2xl"
+        style={{ backgroundImage: "url('/imagenes/pro.jpg')" }}
+      ></div>
 
       {/* Contenido principal */}
       <div className="relative z-10 max-w-7xl mx-auto space-y-20">

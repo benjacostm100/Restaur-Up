@@ -62,6 +62,7 @@ const ProblemSolution = () => {
   return (
     <section className="bg-gradient-to-b from-gray-950 to bg-gray-900 text-white py-20 px-4">
       <div className="max-w-6xl mx-auto space-y-16">
+        
         {/* Problemas Section */}
         <motion.div 
           initial="hidden"
@@ -78,29 +79,29 @@ const ProblemSolution = () => {
           </motion.h2>
           
           <div className="grid md:grid-cols-3 gap-6">
-  {problems.map((item, index) => (
+          {problems.map((item, index) => (
     
-    <motion.div 
-      key={index} 
-      className="flex flex-col items-center p-8 bg bg-gradient-to-br from-black to-gray-950 backdrop-blur-md rounded-2xl border border-gray-600/50 hover:border-[#D96C4B]/50 shadow-lg transition-all h-full"
-      
-      variants={cardVariants}
-      whileHover="hover"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-    >
-        <div className="absolute inset-0 rounded-lg bg-cover bg-center opacity-10"
-        style={{ backgroundImage: "url('/imagenes/textura1.avif')" }}>
-        
-        </div>
-      <div className="p-3 bg-[#D96C4B]/60 rounded-xl mb-4">
-        <item.icon className="text-gray-900" size={28} />
+          <motion.div 
+            key={index} 
+            className="flex flex-col items-center p-8 bg bg-gradient-to-br from-black to-gray-950 backdrop-blur-md rounded-2xl border border-gray-600/50 hover:border-[#D96C4B]/50 shadow-lg transition-all h-full"
+            
+            variants={cardVariants}
+            whileHover="hover"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+              <div className="absolute inset-0 rounded-lg bg-cover bg-center opacity-10"
+              style={{ backgroundImage: "url('/imagenes/textura1.avif')" }}>
+              
+              </div>
+            <div className="p-3 bg-[#D96C4B]/60 rounded-xl mb-4">
+              <item.icon className="text-gray-900" size={28} />
+            </div>
+            <p className="text-lg text-white text-center font-medium">{item.text}</p>
+          </motion.div>
+        ))}
       </div>
-      <p className="text-lg text-white text-center font-medium">{item.text}</p>
-    </motion.div>
-  ))}
-</div>
 
 
           <motion.div 
