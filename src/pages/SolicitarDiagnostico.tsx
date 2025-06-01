@@ -15,7 +15,7 @@ const SolicitarDiagnostico = () => {
 
   return (
     <Layout>
-      <section className="relative pt-40 pb-36 px-4 bg-gradient-to-b from-[#0F0F0F] via-gray-950/80 to-gray-950/70 overflow-hidden">
+      <section className="relative pt-40 pb-36 px-4  bg-gradient-to-t from-gray-950 to-[#1A1A1A] overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
           <div className="absolute top-1/4 left-10 w-32 h-32 rounded-full bg-[#D96C4B]/10 blur-3xl"></div>
           <div className="absolute bottom-1/3 right-20 w-40 h-40 rounded-full bg-[#D96C4B]/05 blur-3xl"></div>

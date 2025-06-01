@@ -127,7 +127,7 @@ const Hero = () => {
         </motion.div>
 
         <motion.div
-          className="mt-16 sm:mt-20 md:mt-24"
+          className="mt-12"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.8 }}
@@ -145,7 +145,7 @@ const Hero = () => {
       </div>
 
       {/* Indicadores de imagen */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 flex space-x-2">
+      <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 z-10 flex space-x-2">
         {images.map((_, i) => (
           <button
             key={i}
