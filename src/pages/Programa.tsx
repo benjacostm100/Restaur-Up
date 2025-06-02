@@ -137,7 +137,8 @@ const Programa = () => {
         >
           <p className="flex items-start gap-3">
             <span className="text-[#D96C4B] font-bold mt-1">•</span>
-            <span><strong className="text-white font-semibold">RestaurUP no es teoría.</strong> Es un sistema creado por quien ha gestionado restaurantes como el tuyo.</span>
+            <span><strong className="text-white font-semibold">RestaurUP no es teoría.</strong> 
+            <br />Es un sistema creado por quien ha gestionado restaurantes como el tuyo.</span>
           </p>
 
           <p className="flex items-start gap-3">
@@ -147,7 +148,7 @@ const Programa = () => {
 
           <p className="flex items-start gap-3">
             <span className="text-[#D96C4B] font-bold mt-1">•</span>
-            <span><span className="text-white">Soy Fran Cabello,</span> con 15+ años liderando operaciones y mi propio restaurante. Sé lo que es preguntarte si saldrán los números.</span>
+            <span>Soy<span className="text-white font-semibold"> Fran Cabello,</span> con 15+ años liderando operaciones y mi propio restaurante. <br /> Sé lo que es preguntarte si saldrán los números.</span>
           </p>
 
           <p className="flex items-start gap-3">
